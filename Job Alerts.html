@@ -12,8 +12,8 @@ color: white;
 a[href*="rss"],a[href*="htmlcomment"]{
 display: none !important;
 }
-.author{
-position: absolute;
+.add_image{
+display: none !important;
 }
 #hcb_form,h2{
 text-align: center;
@@ -69,6 +69,13 @@ color: pink;
 }
 blockquote{
 color: white;
+}
+blockquote:before{
+content: "";
+font-size: 30px;
+}
+.author{
+position: absolute;
 }
 .author:after{
 content: "/posted:";
@@ -131,7 +138,7 @@ MyBase.value = MyBase.value.replace(/Enter your comment here/g, "Paste or Write 
 document.getElementById("Worker").innerHTML = MyBase.value;
 document.getElementById("TopMain").style.display = "block";
 document.getElementById("comments_list").insertAdjacentHTML('beforebegin', document.getElementById("MyTable").value);}};
-xhttp.open("GET", "https://sp-projects.000webhostapp.com/index.php?url=https://www.htmlcommentbox.com/jread?page=spheaven%2Fjobalert.html&mod=%241%24wq1rdBcg%24dnJXoTYgVDb2eZSqxtf0E%2F&opts=16862&num=10&ts=1585899892006", true);
+xhttp.open("GET", "https://sp-projects.000webhostapp.com/index.php?url=https://www.htmlcommentbox.com/jread?page=http://spheaven/&mod=$1$wq1rdBcg$dnJXoTYgVDb2eZSqxtf0E/&opts=16862&num=10&ts=1585901972400", true);
 xhttp.send();
 setTimeout(function(){if(MyBase.value == ""){document.getElementById("HCB_comment_box").style.display = "none";
 alert("Ooops!\nAn error occured while fatching data.\nPlease make sure that you have an better internet connection...")}},10000);}
