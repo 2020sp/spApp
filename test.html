@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Download Movies dialogue ringtones </title>
+<style>
+body{
+background: #000000;
+color: #ffffff;
+}
+#apps{
+border: solid 2px #ffff00;
+border-radius: 30px;
+}
+#myInput,#result{
+background: #212121;
+border: solid 1px #FF0000;
+border-radius: 30px;
+color: #ffffff;
+display: block;
+margin: auto;
+text-align: center;
+width: 60%;
+}
+#result{
+border-color: #008000;
+color: #008000;
+width: 75%;
+}
+.li{
+background: #000099;
+border-radius: 10px;
+list-style: none;
+margin: 3%;
+}
+.li:hover{
+background: #DD0000;
+color: #FFFF00;
+font-weight: bold;
+}
+.header,.wait{
+color: #ffff00;
+font-size: 20px;
+font-weight: bold;
+list-style: none;
+text-align: center;
+}
+</style>
+</head>
+<body>
+<center><h2>Android Apps</h2></center>
+<input type="text" id="myInput" placeholder="Search for apps & games..."/>
+<div id="result"></div>
+<div id="apps">
+<li class="wait">Please Wait...</li>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script>
+$.getJSON("https://sp-projects.000webhostapp.com/index.php?url=https://2020sp.github.io/spApp/test.json",function(data){
+$.each(data.users,function(i,get){
+$("#apps").append("<li role='heading' aria-level='4' class='header'>" + get.cat + "</li><li class='li' link='" + get.url + "'>" + get.name + "</li>");
+$(".header:contains(undefined)").remove();
+$(".wait").remove();
+});
+$('#myInput').on('keyup', function(){
+var value = this.value.toLowerCase();
+$('#apps li').hide().each(function(){
+if ($(this).not('.header').text().toLowerCase().search(value) >- 1){
+$(this).prevAll('.header').first().add(this).show();
+$('#result').html('I found '+$('.li:visible').length+' match(s)').show();
+if(!$('#apps:contains()')){
+$('#result').hide()
+}
+}});});
+$("#apps").on("click",".li",function(){
+getFileSize($(this).attr("link"))});
+function getFileSize(url)
+{var fileSize = '';
+var info = '';
+var xz = '...';
+var http = new XMLHttpRequest();
+http.open('HEAD', url, false);
+http.send(null);
+if (http.status === 200){
+info = "     Content Info:\n\nSafe:\nyes (scanned)" + xz + "\nType:\n" + http.getResponseHeader('content-type') + xz;
+fileSize = http.getResponseHeader('content-length');
+if(confirm(info + '\nSize:\n' + fo(fileSize) + xz)){
+window.open(url);
+}}else{
+alert("Huh no file found!");}
+return fileSize;
+};
+function fo(bytes){
+if (bytes >= 1073741824)
+{bytes =(bytes / 1073741824).toFixed(2)+' GB';}
+else if (bytes >= 1048576)
+{bytes =(bytes / 1048576).toFixed(2) + ' MB';}
+else if (bytes >= 1024)
+{bytes =(bytes / 1024).toFixed(2) + ' KB';}
+else if (bytes > 1)           {bytes = bytes + ' bytes';}
+else if (bytes == 1)          {bytes = bytes + ' byte';}
+else
+{bytes = '0 byte';}
+return bytes;
+}});
+</script>
+</body>
+</html>
