@@ -1,13 +1,25 @@
 {
    "users":[
       {
-         "cat":"App Locker",
-         "name":"CSR App",
-         "url":"/CSR/CSR%20v2.0.200307.apk"
+         "cat":"File Manager",
+         "name":"Bluetooth Explorer v3.2",
+         "url":"/spApp/store/File%20Manager/Bluetooth%20Explorer%20v3.2.apk"
       },
       {
-         "name":"Audio",
-         "url":"https://2020sp.github.io/spApp/Learn%20HTML/audio.mp3"
+         "name":"Duplicate File Remover Pro v1.0.1",
+         "url":"/spApp/store/File%20Manager/Duplicate%20File%20Remover%20Pro%20v1.0.1.apk"
+      },
+      {
+         "name":"File Commander v6.2.33113",
+         "url":"/spApp/store/File%20Manager/File%20Commander%20v6.2.33113.apk"
+      },
+      {
+         "name":"Solid Explorer v2.7.8",
+         "url":"/spApp/store/File%20Manager/Solid%20Explorer%20v2.7.8.apk"
+      },
+      {
+         "name":"Total Commander v3.0b12",
+         "url":"/spApp/store/File%20Manager/Total%20Commander%20v3.0b12.apk"
       }
    ]
 }
