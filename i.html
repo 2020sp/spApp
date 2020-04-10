@@ -91,7 +91,7 @@ text-align: center;
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js"></script>
 <script>
-$.getJSON("https://sp-projects.000webhostapp.com/index.php?url=https://2020sp.github.io/spApp/others/hindijokes.json",function(data){
+$.getJSON("/spApp/others/hindijokes.json",function(data){
 $.each(data.users,function(i,get){
 $(".jokes").append("<li class='li'>" + get.name1 + "<i>,Double Tap To Copy.</i></li>");
 $(".wait").remove();
