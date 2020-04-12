@@ -158,7 +158,7 @@ var showFrom = perPage * (pageNumber - 1);
 var showTo = showFrom + perPage;
 items.hide().slice(showFrom, showTo).show();
 }});});});});
-$(".jokes").on("click",".li",function(){
+$(document).on("click",".li",function(){
 $("<textarea/>").appendTo("body").val($(this).text()).select().each(function(){
 try{
 var cmd = document.execCommand('copy')
