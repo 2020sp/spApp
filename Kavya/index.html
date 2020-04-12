@@ -13,9 +13,6 @@ color: #ffffff;
 height: 98%;
 text-align: center;
 }
-i{
-font-size: 0px;
-}
 #main{
 display: none;
 }
@@ -99,7 +96,7 @@ font-size: 20px;
 font-weight: bold;
 list-style: none;
 }
-.header{
+.header,#result{
 margin-top: 10px;
 }
 .writer{
@@ -141,7 +138,7 @@ $("#main").show();
 $(".jokes").empty().append("<li class='wait'>Please Wait...</li>");
 $.getJSON("https://raw.githubusercontent.com/2020sp/spApp/master/Kavya/"+$(this).attr("URL")+".json",function(data){
 $.each(data,function(i,get){
-$(".jokes").append("<li class='header'>" + get.title + "</li><li class='li'>" + get.poem + "<i>,Double Tap To Copy.</i></li>");
+$(".jokes").append("<li class='header'>" + get.title + "</li><li class='li'>" + get.poem + "</li>");
 $(".wait").remove();
 var items = $(".jokes .li, .jokes .header");
 var numItems = items.length;
