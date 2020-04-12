@@ -158,14 +158,6 @@ var showFrom = perPage * (pageNumber - 1);
 var showTo = showFrom + perPage;
 items.hide().slice(showFrom, showTo).show();
 }});});});});
-$(document).on("click",".li",function(){
-$("<textarea/>").appendTo("body").val($(this).text()).select().each(function(){
-try{
-var cmd = document.execCommand('copy')
-cmd ? alert("Copied!\nNow you can share this joke anywhere with anyone:)") : alert("Failed to copy, check your device settings or restart.")
-}catch(err){
-alert("Clipboard Access Has Denied!");
-}}).remove()});});
 $("#myInput").keyup(function(){
 var filter = $(this).val(), count = 0;
 if(filter ==""){
