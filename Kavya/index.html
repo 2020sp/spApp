@@ -162,9 +162,9 @@ $(".jokes").on("click",".li",function(){
 $("<textarea/>").appendTo("body").val($(this).text()).select().each(function(){
 try{
 var cmd = document.execCommand('copy')
-cmd ? alert("Copied!\nNow you can share this joke anywhere with anyone:)") : alert("Failed to copy, check your device settings or restart.")
+cmd ? alert("चुने गए काव्यांश की प्रति सफलतापूर्वक तैयार कर ली गयी है,\nअब आप इसे किसी भी स्थान पर साझा कर सकते हैं.") : alert("क्षमा चाहते हैं:\nप्रति बनाने में असफल,\nकृपया अपने यन्त्र समायोजन की जांच करें अथवा यन्त्र बन्द कर दोबारा शुरू करें.")
 }catch(err){
-alert("Clipboard Access Has Denied!");
+alert("प्रति बनाने की स्वीकृति प्राप्त करने में असमर्थ!");
 }}).remove()});
 $("#myInput").keyup(function(){
 var filter = $(this).val(), count = 0;
@@ -180,12 +180,12 @@ $(this).show();
 count++;
 }});
 if(count =="0"){
-$("#result").text("Oh, Sad:( "+count+" match");
+$("#result").text("कोई परिणाम उपलब्ध नहीं है!");
 }else
 if(count =="1"){
-$("#result").text("Only "+count+" match");
+$("#result").text("केवल "+count+" परिणाम");
 }else{
-$("#result").text("I found "+count+" matches");
+$("#result").text("मुझे "+count+" परिणाम मिले");
 }});
 </script>
 </body>
