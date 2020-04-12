@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>Read jokes for Kids & Adults</title>
+<style>
+body, html{
+background: #00008b;
+color: #ffffff;
+height: 98%;
+text-align: center;
+}
+i{
+font-size: 0px;
+}
+#main{
+display: none;
+}
+#myInput{
+background: #000000;
+border: solid 1px #00008b;
+border-radius: 30px;
+color: #ffffff;
+text-align: center;
+}
+#splash{
+background: #87cffa;
+color: #00008b;
+height: 100%;
+overflow-x: hidden;
+}
+.fa-question-circle, .fa-list{
+font-size: 30px;
+right: 10px;
+top: 10px;
+position: absolute;
+}
+.fa-list{
+font-size: 26px;
+left: 10px;
+text-align: left;
+}
+.li{
+border: solid 1px #87cffa;
+border-radius: 10px;
+list-style: none;
+padding: 5%;
+margin: 5%;
+}
+.li:hover{
+color: #87cffa;
+}
+.jokes{
+border: solid 2px #87cffa;
+border-radius: 30px;
+}
+.simple-pagination ul{
+margin: 0 0 5px;
+padding: 0;
+list-style: none;
+text-align: center;
+}
+.simple-pagination li{
+display: inline-block;
+margin-right: 2px;
+}
+.simple-pagination li a,
+.simple-pagination li span{
+color: #87cffa;
+padding: 5px;
+text-decoration: none;
+border: 1px solid #EEE;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px #EEE;
+}
+.simple-pagination .current{
+color: #0000ff;
+background-color: #87cffa;
+}
+.simple-pagination .current:before{
+content: "Selected,";
+font-size: 0px;
+}
+.simple-pagination .prev.current,
+.simple-pagination .next.current{
+background: #87cffa;
+}
+.simple-pagination .prev.current:after,
+.simple-pagination .next.current:after{
+content: ",Disabled";
+font-size: 0px;
+}
+.header, .wait, .writer{
+color: #87cffa;
+font-size: 20px;
+font-weight: bold;
+list-style: none;
+}
+.header{
+margin-top: 10px;
+}
+.writer{
+background: #00008b;
+border: solid 1px #a52a2a;
+border-radius: 15px;
+color: #ffffff;
+font-weight: bold;
+margin: auto;
+margin-bottom: 10px;
+margin-top: 10px;
+width: 80%;
+}
+</style>
+</head>
+<body>
+<div id="splash">
+<h2>काव्य संग्रह</h2>
+<input type="text" id="myInput" placeholder="पसंदीदा लेखक खोजें..."/>
+<div id="result" aria-live="polite"></div>
+<div id="writers">
+<li class="writer">अज्ञेय</li><li class="writer">अहमद फ़राज़</li><li class="writer">अजित कुमार</li><li class="writer">अल्हड़ बीकानेरी</li><li class="writer">अमरनाथ श्रीवास्तव</li><li class="writer">अमिताभ त्रिपाठी "अमित"</li><li class="writer">अमिताभ बच्चन</li><li class="writer">अनामिका</li><li class="writer">अंजना भट्ट</li><li class="writer">अशोक अंजुम</li><li class="writer">अशोक वाजपेयी</li><li class="writer">आशुतोष द्विवेदी</li><li class="writer">अटल बिहारी वाजपेयी</li><li class="writer">अयोध्या सिंह उपाध्याय "हरिऔध"</li><li class="writer">बालकवि बैरागी</li><li class="writer">बालकृष्ण राव</li><li class="writer">बालस्वरूप राही</li><li class="writer">बशीर बद्र</li><li class="writer">बेकल उत्साही</li><li class="writer">भारत भूषण अग्रवाल</li><li class="writer">बुद्धिनाथ मिश्र</li><li class="writer">चंद्रसेन विराट</li><li class="writer">देवराज दिनेश</li><li class="writer">धनंजय सिंह</li><li class="writer">धर्मवीर भारती</li><li class="writer">दिनेश सिंह</li><li class="writer">दिविक रमेश</li><li class="writer">दुष्यंत कुमार</li><li class="writer">गोपाल सिंह नेपाली</li><li class="writer">गिरिधर</li><li class="writer">गोपीकृष्ण "गोपेश"</li><li class="writer">इब्ने इंशा</li><li class="writer">जगदीश गुप्त</li><li class="writer">कबीर</li><li class="writer">काका हाथरसी</li><li class="writer">किशन सरोज</li><li class="writer">कुमार विश्वास</li><li class="writer">कुंवर नारायण</li><li class="writer">मदन कश्यप</li><li class="writer">महादेवी वर्मा</li><li class="writer">मैथिलीशरण गुप्त</li><li class="writer">माखनलाल चतुर्वेदी</li><li class="writer">मीराबाई</li><li class="writer">नागार्जुन</li><li class="writer">नरेश सक्सेना</li><li class="writer">निदा फ़ाज़ली</li><li class="writer">नीलम सिंह</li><li class="writer">ओम प्रभाकर</li><li class="writer">नरेन्द्र शर्मा</li><li class="writer">पीयूष मिश्रा</li><li class="writer">प्रभाकर माचवे</li><li class="writer">प्रदीप</li><li class="writer">प्रतिभा सक्सेना</li><li class="writer">प्रयाग शुक्ल</li><li class="writer">पूर्णिमा वर्मन</li><li class="writer">रघुवीर सहाय</li><li class="writer">रहीम</li><li class="writer">राकेश खंडेलवाल</li><li class="writer">रामदरश मिश्र</li><li class="writer">रमेश गौड़</li><li class="writer">रसखान</li><li class="writer">रवीन्द्र भ्रमर</li><li class="writer">ऋतुराज</li><li class="writer">साहिर लुधियानवी</li><li class="writer">सर्वेश्वरदयाल सक्सेना</li><li class="writer">सत्यनारायण</li><li class="writer">शलभ श्रीराम सिंह</li><li class="writer">शिव बहादुर सिंह भदौरिया</li><li class="writer">श्रीकृष्ण तिवारी</li><li class="writer">श्रीप्रकाश शुक्ल</li><li class="writer">सूरदास</li><li class="writer">ताराप्रकाश जोशी</li><li class="writer">त्रिलोचन</li><li class="writer">उदय भान मिश्र</li><li class="writer">उदयभानु "हंस"</li><li class="writer">विद्यावती कोकिल</li><li class="writer">विजयदेव नारायण साही</li><li class="writer">वीरेंद्र मिश्र</li><li class="writer">रामनरेश त्रिपाठी</li><li class="writer">जयशंकर प्रसाद</li>
+</div></div>
+<div id="main">
+<center><h3 class="title"></h3></center>
+<b title="List" role="button" class="fa fa-list" onclick="$('#main').hide();$('#splash').show()"></b>
+<b title="Help" role="button" class="fa fa-question-circle" onclick="if(confirm('Request:\nThere are ' + $('.li').length + ' jokes available, but still if you need any kind of help, please do not hesitate to contact us we will glad to assist you:)')){window.open('http://wa.me/919582674239?text=Hindi%20Jokes')}"></b>
+<div id="pagination-container"></div>
+<div class="jokes">
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js"></script>
+<script>
+$("#writers").on("click", ".writer", function(){
+$(".title").text($(this).text());
+$("#splash").hide();
+$("#main").show();
+$(".jokes").empty().append("<li class='wait'>Please Wait...</li>");
+$.getJSON("https://raw.githubusercontent.com/2020sp/spApp/master/Kavya/"+$(this).attr("URL")+".json",function(data){
+$.each(data,function(i,get){
+$(".jokes").append("<li class='header'>" + get.title + "</li><li class='li'>" + get.poem + "<i>,Double Tap To Copy.</i></li>");
+$(".wait").remove();
+var items = $(".jokes .li, .jokes .header");
+var numItems = items.length;
+var perPage = 20;
+items.slice(perPage).hide();
+$('#pagination-container').pagination({
+items: numItems,
+itemsOnPage: perPage,
+currentPage: $("#pageJump").val(),
+displayedPages: 1,
+edges: 1,
+onPageClick: function (pageNumber){
+var showFrom = perPage * (pageNumber - 1);
+var showTo = showFrom + perPage;
+items.hide().slice(showFrom, showTo).show();
+}});});});});
+$("#myInput").keyup(function(){
+var filter = $(this).val(), count = 0;
+if(filter ==""){
+$("#result").hide()}
+else
+{$("#result").show()}
+$("#writers li").each(function(){
+if ($(this).text().search(new RegExp(filter, "i")) < 0){
+$(this).hide();
+}else{
+$(this).show();
+count++;
+}});
+if(count =="0"){
+$("#result").text("Oh, Sad:( "+count+" match");
+}else
+if(count =="1"){
+$("#result").text("Only "+count+" match");
+}else{
+$("#result").text("I found "+count+" matches");
+}});
+</script>
+</body>
+</html>
