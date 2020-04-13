@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<title>शायरी संग्रह</title>
+<style>
+body, html{
+background: #00008b;
+color: #ffffff;
+height: 98%;
+text-align: center;
+}
+#main{
+display: none;
+}
+#myInput{
+background: #000000;
+border: solid 1px #00008b;
+border-radius: 30px;
+color: #ffffff;
+text-align: center;
+}
+#splash{
+background: #87cffa;
+color: #00008b;
+height: 100%;
+overflow-x: hidden;
+}
+.fa-question-circle, .fa-list{
+font-size: 30px;
+right: 10px;
+top: 10px;
+position: absolute;
+}
+.fa-list{
+font-size: 26px;
+left: 10px;
+text-align: left;
+}
+.li{
+border: solid 1px #87cffa;
+border-radius: 10px;
+list-style: none;
+padding: 5%;
+margin: 5%;
+}
+.li:hover{
+color: #87cffa;
+}
+.jokes{
+border: solid 2px #87cffa;
+border-radius: 30px;
+}
+.simple-pagination ul{
+margin: 0 0 5px;
+padding: 0;
+list-style: none;
+text-align: center;
+}
+.simple-pagination li{
+display: inline-block;
+margin-right: 2px;
+}
+.simple-pagination li a,
+.simple-pagination li span{
+color: #87cffa;
+padding: 5px;
+text-decoration: none;
+border: 1px solid #EEE;
+border-radius: 10px;
+box-shadow: 0px 0px 10px 0px #EEE;
+}
+.simple-pagination .current{
+color: #0000ff;
+background-color: #87cffa;
+}
+.simple-pagination .current:before{
+content: "Selected,";
+font-size: 0px;
+}
+.simple-pagination .prev.current,
+.simple-pagination .next.current{
+background: #87cffa;
+}
+.simple-pagination .prev.current:after,
+.simple-pagination .next.current:after{
+content: ",Disabled";
+font-size: 0px;
+}
+.header, .wait, .writer{
+color: #87cffa;
+font-size: 20px;
+font-weight: bold;
+list-style: none;
+}
+.header,#result{
+margin-top: 10px;
+}
+.writer{
+background: #00008b;
+border: solid 1px #a52a2a;
+border-radius: 15px;
+color: #ffffff;
+font-weight: bold;
+margin: auto;
+margin-bottom: 10px;
+margin-top: 10px;
+width: 80%;
+}
+</style>
+</head>
+<body>
+<div id="splash">
+<h2>शायरी संग्रह</h2>
+<input type="text" id="myInput" placeholder="पसंदीदा अवसर खोजें..."/>
+<div id="result" aria-live="polite"></div>
+<div id="writers">
+<li URL="1" class="writer">जन्मदिन शायरी</li><li URL="2" class="writer">राजनीति शायरी</li><li URL="3" class="writer">दोस्ती शायरी</li><li URL="4" class="writer">शराब शायरी</li><li URL="5" class="writer">मजाकिया शायरी</li><li URL="6" class="writer">प्रेरणा स्रोत शायरी</li><li URL="7" class="writer">बेवफा शायरी</li><li URL="8" class="writer">जीवन मंत्र शायरी</li><li URL="9" class="writer">मोहब्बत शायरी</li><li URL="10" class="writer">गम शायरी</li>
+</div></div>
+<div id="main">
+<center><h3 class="title"></h3></center>
+<b title="अवसरों की सूची" role="button" class="fa fa-list" onclick="$('#main').hide();$('#splash').show()"></b>
+<b title="सहायता" role="button" class="fa fa-question-circle" onclick="if(confirm('प्रति बनाएं:\nकिसी शायरी के पसंद आने पर उसकी प्रति प्राप्त करने हेतु उसका चयन करें.\n\nनिवेदन करें:\nयदि आपको मनपसंद अवसर या शायरी नहीं मिली और आप उसे यहां देखना चाहते हैं तो नीचे दिया गया *OK* बटन दबाएं.')){window.open('http://wa.me/919582674239?text=Request%20Shayari')}"></b>
+<div id="pagination-container"></div>
+<div class="jokes">
+</div></div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/react/0.13.0/react.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js"></script>
+<script>
+$("#writers").on("click", ".writer", function(){
+$(".title").text($(this).text());
+$("#splash").hide();
+$("#main").show();
+$(".jokes").empty().append("<li class='wait'>Please Wait...</li>");
+$.getJSON("https://raw.githubusercontent.com/2020sp/spApp/master/Shayari/chapter_"+$(this).attr("URL")+".json",function(data){
+$.each(data,function(i,get){
+$(".jokes").append("<li class='header'>" + get.st + "</li><li class='li'>" + get.s + "</li>");
+$(".wait").remove();
+var items = $(".jokes .li, .jokes .header");
+var numItems = items.length;
+var perPage = 20;
+items.slice(perPage).hide();
+$('#pagination-container').pagination({
+items: numItems,
+itemsOnPage: perPage,
+currentPage: $("#pageJump").val(),
+displayedPages: 1,
+edges: 1,
+onPageClick: function (pageNumber){
+var showFrom = perPage * (pageNumber - 1);
+var showTo = showFrom + perPage;
+items.hide().slice(showFrom, showTo).show();
+}});});});});
+$(".jokes").on("click",".li",function(){
+$("<textarea/>").appendTo("body").val($(this).text()).select().each(function(){
+try{
+var cmd = document.execCommand('copy')
+cmd ? alert("चुनी गई शायरी की प्रति सफलतापूर्वक तैयार कर ली गयी है,\nअब आप इसे किसी भी स्थान पर साझा कर सकते हैं.") : alert("क्षमा चाहते हैं:\nप्रति बनाने में असफल,\nकृपया अपने यन्त्र समायोजन की जांच करें अथवा यन्त्र बन्द कर दोबारा शुरू करें.")
+}catch(err){
+alert("प्रति बनाने की स्वीकृति प्राप्त करने में असमर्थ!");
+}}).remove()});
+$("#myInput").keyup(function(){
+var filter = $(this).val(), count = 0;
+if(filter ==""){
+$("#result").hide()}
+else
+{$("#result").show()}
+$("#writers li").each(function(){
+if ($(this).text().search(new RegExp(filter, "i")) < 0){
+$(this).hide();
+}else{
+$(this).show();
+count++;
+}});
+if(count =="0"){
+$("#result").text("कोई परिणाम उपलब्ध नहीं है!");
+}else
+if(count =="1"){
+$("#result").text("केवल "+count+" परिणाम");
+}else{
+$("#result").text("हमें "+count+" परिणाम मिले");
+}});
+</script>
+</body>
+</html>
