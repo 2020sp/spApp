@@ -90,14 +90,4 @@ document.getElementById("menubtn").style.color = 'white';
 document.getElementById('done').style.color = "white";
 document.getElementById('set-opt').style.color = "white";
 document.getElementById('cPick').style.color = "white";
-}
-}
-function settings(){
-document.getElementById('settings').style.display = "block";
-document.getElementById('menu').style.display = "none";
-}
-function done(){
-document.getElementById('settings').style.display = "none";
-document.getElementById('mainpage').style.display = "block";
-document.getElementById('menubtn').style.display = "block";
-}
+}}
