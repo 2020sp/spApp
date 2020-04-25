@@ -1,0 +1,145 @@
+﻿
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Mobilize</title> 
+    <link rel="apple-touch-icon" href="images/fb.png"/>
+    <script>
+		if (window.screen.height==568) { // iPhone 4"
+		document.querySelector("meta[name=viewport]").content="width=320.1";
+		}
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style4.css">
+
+    <!-- scripts -->
+	<script src="jquery-1.8.2.min.js.download"></script>
+	<script src="jquery.mobile-1.3.0.min.js.download"></script>
+	<script src="screen.js.download"></script> 
+    
+</head>
+<body>
+
+
+<div id="home-page" data-role="page">
+
+	
+    
+    <!-- header -->
+	<div data-role="header" class="page-header">
+    	<div class="logo"></div>
+	</div>
+    <!--/header --> 
+    
+
+ 
+	<!-- main content -->
+  	<div data-role="content">    
+    
+     
+    
+	<div class="shadow1box">
+		<img src="images/shadow1.png" class="shadow1" alt="shadow">
+	</div>
+    
+    <div class="content-padd">
+  
+  	<hr class="ornamental"/>
+  		<h3 class="home-title">राजस्थान में लोक देवता</h3>
+	<hr class="ornamental"/>
+
+		<!-- navigation -->
+		<!-- list begins -->
+	<div class="padd">
+
+		<ul class="ui-listview" data-filter-theme="d" data-filter-placeholder="Search here..." data-filter="true" data-role="listview" data-inset="true">
+			
+            <li data-role="list-divider" role="heading"></li>
+	
+
+
+			<li><a href="39.html" data-prefetch data-ajax="false">1.रामदेव जी </a></li>
+			<li><a href="40.html" data-prefetch data-ajax="false">2.गोगा जी </a></li>
+			<li><a href="41.html" data-prefetch data-ajax="false">3.पाबु जी </a></li>  
+                        <li><a href="42.html" data-prefetch data-ajax="false">4.हरभू जी</a></li>
+			<li><a href="43.html" data-prefetch data-ajax="false">5.मेहा जी मांगलिया</a></li>
+			<li><a href="44.html" data-prefetch data-ajax="false">6.वीर तेजा जी</a></li>
+			<li><a href="45.html" data-prefetch data-ajax="false">7.देवनारायण जी</a></li>
+			<li><a href="46.html" data-prefetch data-ajax="false">8.देवबाबा जी </a></li> 
+                         <li><a href="47.html" data-prefetch data-ajax="false">9.वीर कल्ला जी </a></li>
+			<li><a href="48.html" data-prefetch data-ajax="false">10.मल्ली नाथ जी </a></li>
+			<li><a href="49.html" data-prefetch data-ajax="false">11.वीर बग्गा जी </a></li>
+			<li><a href="50.html" data-prefetch data-ajax="false">12.वीर फता जी </a></li>
+			<li><a href="51.html" data-prefetch data-ajax="false">13.तल्लीनाथ जी </a></li>
+			<li><a href="52.html" data-prefetch data-ajax="false">14.अन्य लोक देवता </a></li><br />
+			
+			<li><a href="index.html" data-prefetch data-ajax="false">Home</a></li>
+
+			
+
+
+
+   <div class="shadow2box"><img src="images/shadow2.png" class="shadow2" alt="shadow"></div>                      
+				
+        </ul>
+
+	</div>
+	<!-- list ends -->
+
+
+        
+        
+        <!-- /navigation -->  
+    
+	
+    
+	<!-- social -->
+    <div class="social">
+    	<a href="https://www.facebook.com/mahendraseeraapps/"><img src="images/fb.png" alt="facebook"></a>
+    	<a href="https://www.facebook.com/mahendraseeraapps/"><img src="images/twitter2.png" alt="twitter"></a>
+    	<a href="https://www.facebook.com/mahendraseeraapps/"><img src="images/linkedin.png" alt="linkedin"></a>
+    	<a href="https://www.facebook.com/mahendraseeraapps/"><img src="images/dribble.png" alt="dribble"></a>
+    	<a href="https://www.facebook.com/mahendraseeraapps/"><img src="images/wordpress.png" alt="wordpress"></a>
+    </div>
+    <!-- /social -->
+
+        
+	</div><!-- /content padd -->
+	</div><!-- /content -->    
+    
+    
+    <!-- footer -->
+	<div data-role="footer">
+		<div data-role="navbar" class="custom-icons" data-grid="c" >
+			<ul>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="sign" data-icon="custom" data-theme="b">Directions</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="cell" data-icon="custom" data-theme="b">Call Us</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="brush" data-icon="custom" data-theme="b" data-ajax="false">Portfolio</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="twitter" data-icon="custom" data-theme="b">Tweets</a></li>
+			</ul>
+		</div>
+       
+	</div>
+	<!-- /footer -->
+	
+</div><!-- /page -->
+
+
+
+<!-- add to homepage bubble on iphone, ipad  -->
+<script type="text/javascript">
+	if ('standalone' in navigator && !navigator.standalone && (/iphone|ipod|ipad/gi).test(navigator.platform) && (/Safari/i).test(navigator.appVersion)) {
+		document.write('<link rel="stylesheet" href="assets\/add-bubble\/style\/add2home.css">');
+		document.write('<script type="application\/javascript" src="assets\/add-bubble\/src\/add2home.js" charset="utf-8"><\/s' + 'cript>');
+	}
+</script>
+<!-- /add to homepage bubble on iphone, ipad  --> 
+
+</body>
+</html>
