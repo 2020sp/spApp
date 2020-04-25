@@ -1,7 +1,8 @@
-<iframe style="border:none;display:block;height:100%;width:100%;" src="index.html"></iframe>
+<iframe id="MyFrame" style="border:none;display:block;height:100%;width:100%;" src="index.html"></iframe>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-setInterval(function(){
-$("iframe").contents().find("div").removeAttr("data-role");
-},100);
+setInterval(() => {
+let iframe = document.getElementById("MyFrame");
+iframe.contentWindow.document.querySelector("div").removeAttr("data-role");
+}, 100);
 </script>
