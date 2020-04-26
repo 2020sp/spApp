@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html><title>################</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" /> 
+  <link rel="stylesheet" media="all" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="hindi recipes"/></a></div>
+      <div class="options">
+      	<ul>
+      		<li>Search</li>
+      		<li>Menu</li>
+      	</ul>
+      </div>
+      <div class="clear"></div>
+	    <div class="search-box">
+	    	<form action="#">
+	    		<input type="text" placeholder="Search gallery" />
+	    		<input type="submit" value="Go" />
+	    	</form>
+	    	<div class="clear"></div>
+	    </div>
+	    <nav class="vertical menu">
+	    	<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="single.html">Single page</a></li>
+	            <li><a href="basic_markup.html">Basic Markup Page</a></li>
+	            <li><a href="contact.html">Contact Page</a></li>
+        	</ul>
+	    </nav>
+    </header>
+    
+        
+    <div class="content">
+    
+
+
+	<article class="underline">
+	
+
+
+	
+
+ <div dir="ltr" style="text-align: left;" trbidi="on">
+<span style="font-size: x-large;"><b>बाल दिवस</b></span><br />
+<br />
+14 नवंबर को भारत के प्रथम प्रधानमंत्री पं. जवाहरलाल नेहरू का जन्मदिन होता है। इसे बाल दिवस के रूप में मनाया जाता है। क्योंकि उन्हें बच्चों से बहुत प्यार था और बच्चे उन्हें चाचा नेहरू पुकारते थे।<br />
+<br />
+बाल दिवस बच्चों को समर्पित भारत का राष्ट्रीय त्योहार है। देश की आजादी में भी नेहरू का बड़ा योगदान था।<br />
+<br />
+प्रधानमंत्री के रूप में उन्होंने देश का उचित मार्गदर्शन किया था। बाल दिवस बच्चों के लिए महत्वपूर्ण दिन होता है। इस दिन स्कूली बच्चे बहुत खुश दिखाई देते हैं। वे सज-धज कर विद्यालय जाते हैं। विद्यालयों में बच्चे विशेष कार्यक्रम आयोजित करते हैं।<br />
+<br />
+वे अपने चाचा नेहरू को प्रेम से स्मरण करते हैं। बाल मेले में बच्चे अपनी बनाई हुई वस्तुओं की प्रदर्शनी लगाते हैं। इसमें बच्चे अपनी कला का प्रदर्शन करते हैं। नृत्य, गान, नाटक आदि प्रस्तुत किए जाते हैं। नुक्कड़ नाटकों के द्वारा आम लोगों को शिक्षा का महत्व बताया जाता है।<br />
+<br />
+<br />
+बच्चे देश का भविष्य हैं। इसलिए हमें सभी बच्चों की शिक्षा की तरफ ध्यान देना चाहिए। बच्चों के रहन-सहन के स्तर ऊंचा उठाना हमारी प्राथमिकता होनी चाहिए। इन्हें स्वस्थ, निर्भीक और योग्य नागरिक बनाने का प्रयास किया जाना चाहिए। यह बाल दिवस का संदेश है।<br />
+<br />
+बाल दिवस के अवसर पर केंद्र तथा राज्य सरकार बच्चों के भविष्य के लिए कई कार्यक्रमों की घोषणा करती है।<br />
+<br />
+बाल श्रम रोधी कानूनों को सही मायनों में पूरी तरह से लागू किया जाना चाहिए। अनेक कानून बने होने के बावजूद बाल श्रमिकों की संख्‍या में वर्ष दर वर्ष वृद्धि होती जा रही है। इन बच्चों का सही स्थान कल-कारखानों में नहीं बल्कि स्कूल है।</div>
+
+
+
+
+
+  <footer>
+    	<p>&copy;  2016. Design by <a href="http://kajod.com">kajod</a></p>
+    </footer>
+  </div>
+ 
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+   window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+   $('.search-box,.menu' ).hide();   
+   $('.options li:first-child').click(function(){	
+   		$(this).toggleClass('active'); 	
+   		$('.search-box').toggle();        			
+   		$('.menu').hide();  		
+   		$('.options li:last-child').removeClass('active'); 
+   });
+   $('.options li:last-child').click(function(){
+   		$(this).toggleClass('active');      			
+   		$('.menu').toggle();  		
+   		$('.search-box').hide(); 
+   		$('.options li:first-child').removeClass('active'); 		
+   });
+   $('.content').click(function(){
+   		$('.search-box,.menu' ).hide();   
+   		$('.options li:last-child, .options li:first-child').removeClass('active');
+   });
+</script>
+</body>
+</html>

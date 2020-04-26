@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html><title>################</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" /> 
+  <link rel="stylesheet" media="all" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="hindi recipes"/></a></div>
+      <div class="options">
+      	<ul>
+      		<li>Search</li>
+      		<li>Menu</li>
+      	</ul>
+      </div>
+      <div class="clear"></div>
+	    <div class="search-box">
+	    	<form action="#">
+	    		<input type="text" placeholder="Search gallery" />
+	    		<input type="submit" value="Go" />
+	    	</form>
+	    	<div class="clear"></div>
+	    </div>
+	    <nav class="vertical menu">
+	    	<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="single.html">Single page</a></li>
+	            <li><a href="basic_markup.html">Basic Markup Page</a></li>
+	            <li><a href="contact.html">Contact Page</a></li>
+        	</ul>
+	    </nav>
+    </header>
+    
+        
+    <div class="content">
+    
+
+
+	<article class="underline">
+	
+
+
+	
+
+ <div dir="ltr" style="text-align: left;" trbidi="on">
+<h1 class="headingMain" style="background-color: white; box-sizing: border-box; color: #292929; font-family: &quot;Noto Sans&quot;, sans-serif; font-size: 30px; font-weight: 500; line-height: 40px; margin: 0px; padding: 0px;">
+मेरा विद्यालय</h1>
+<br />
+मैं एक उच्चतर माध्यमिक विद्यालय में पढ़ता हूं। मेरे विद्यालय का नाम सरस्वती विद्या मंदिर है। इसकी गिनती शहर के प्रसिद्ध विद्यालयों में होती है। पढ़ाई, खेलकूद तथा अन्य गतिविधियां हमारे स्कूल का प्रमुख हिस्सा हैं।<br />
+<br />
+मेरे विद्यालय में लगभग 750 विद्यार्थी हैं। 30 से ज्यादा अध्यापक और अध्यापिकाएं हैं। इनके अतिरिक्त 4 लिपिक और 2 चपरासी भी यहां कार्यरत हैं। अध्यापक गण अनुभवी, विद्वान एवं परिश्रमी हैं।<br />
+<br />
+हमारे प्रधानाचार्य बहुत ही गुणी एवं अनुशासप्रिय व्यक्ति हैं। विद्यार्थियों के साथ उनका व्यवहार बहुत ही मधुर है। समय-समय पर वे विद्यार्थियों को मार्गदर्शन भी देते रहते हैं।<br />
+<br />
+मेरे विद्यालय की इमारत पक्की है। इसमें 25 हवादार कमरे हैं। विद्यालय के एक कमरे में प्रधानाचार्य का कार्यालय भी है जो कि साफ-सुथरा और भलीभांति सजा हुआ है। कक्षाओं में राष्ट्रपिता महात्मा गांधी, सुभाषचंद्र बोस, भगत सिंह आदि स्वतंत्रता सेनानियों के फोटो लगे हुए हैं।<br />
+<br />
+विद्यालय में एक पुस्तकालय भी है। जहां से सभी छात्रों को पुस्तकें पढ़ने के लिए उपलब्ध होती हैं। विद्यालय में प्रायोगिक कक्षाओं के लिए लैब भी बनी हैं। मेरे विद्यालय का परीक्षा परिणाम लगभग शत-प्रतिशत रहता है और कई छात्र मेरिट में भी स्थान पाते हैं।<br />
+<br />
+निर्धन छात्रों को प्रतिवर्ष छात्रवृत्ति भी उपलब्ध कराई जाती है। मेधावी छात्रों का प्रतिवर्ष सम्मान भी किया जाता है। बोर्ड की कक्षाओं में गणित और विज्ञान संकाय में सर्वोच्च अंक प्राप्त करने वाले विद्यार्थियों को गोल्ड मेडल देने की भी परंपरा है। मुझे अपने इस विद्यालय पर बहुत गर्व है।</div>
+
+
+
+
+
+  <footer>
+    	<p>&copy;  2016. Design by <a href="http://kajod.com">kajod</a></p>
+    </footer>
+  </div>
+ 
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+   window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+   $('.search-box,.menu' ).hide();   
+   $('.options li:first-child').click(function(){	
+   		$(this).toggleClass('active'); 	
+   		$('.search-box').toggle();        			
+   		$('.menu').hide();  		
+   		$('.options li:last-child').removeClass('active'); 
+   });
+   $('.options li:last-child').click(function(){
+   		$(this).toggleClass('active');      			
+   		$('.menu').toggle();  		
+   		$('.search-box').hide(); 
+   		$('.options li:first-child').removeClass('active'); 		
+   });
+   $('.content').click(function(){
+   		$('.search-box,.menu' ).hide();   
+   		$('.options li:last-child, .options li:first-child').removeClass('active');
+   });
+</script>
+</body>
+</html>

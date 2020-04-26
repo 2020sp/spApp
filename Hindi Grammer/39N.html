@@ -1,0 +1,90 @@
+﻿<!DOCTYPE html><title>################</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" /> 
+  <link rel="stylesheet" media="all" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="hindi recipes"/></a></div>
+      <div class="options">
+      	<ul>
+      		<li>Search</li>
+      		<li>Menu</li>
+      	</ul>
+      </div>
+      <div class="clear"></div>
+	    <div class="search-box">
+	    	<form action="#">
+	    		<input type="text" placeholder="Search gallery" />
+	    		<input type="submit" value="Go" />
+	    	</form>
+	    	<div class="clear"></div>
+	    </div>
+	    <nav class="vertical menu">
+	    	<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="single.html">Single page</a></li>
+	            <li><a href="basic_markup.html">Basic Markup Page</a></li>
+	            <li><a href="contact.html">Contact Page</a></li>
+        	</ul>
+	    </nav>
+    </header>
+    
+        
+    <div class="content">
+    
+
+
+	<article class="underline">
+	
+
+
+	
+<div dir="ltr" style="text-align: left;" trbidi="on">
+<span style="font-size: x-large;"><b>मां पर निबंध</b></span><br />
+<br />
+मेरी मां बहुत प्यारी हैं। वे रोज सुबह घर में सबसे पहले उठ जाती हैं। भगवान से लेकर घर के सब लोगों का ध्यान मेरी मां ही रखती हैं। वे दादा-दादी का पूरा ध्यान रखती हैं। पापा, मेरी और मेरी छोटी बहन की हर एक छोटी बड़ी बातों की परवाह भी मेरी मां करती हैं। दादी कहती हैं कि मेरी मां घर की लक्ष्मी हैं। मैं भी मां को भगवान के समान मानता हूं और उनकी हर बात मानता हूं।<br />
+<br />
+मेरी मां जॉब भी करती हैं। घर और ऑफिस दोनों की जिम्मेदारी वे बहुत ही अच्छे से निभाती हैं। उनके सरल और सुलझे व्यवहार की तारीफ उनके ऑफिस के सारे लोग करते हैं। मेरी मां गरीबों और बीमारों की भी हर संभव मदद करती हैं। मेरी मां मेरी सबसे अच्छी दोस्त हैं। मैं जब कोई गलती करता हूं तब मां मुझे डांटती नहीं हैं बल्कि प्यार से मुझे समझाती हैं। जब मैं दुखी होता हूं तब मेरी मां ही मेरे मुरझाए चेहरे पर मुस्कुराहट लेकर आती हैं। उनके प्यार और ममतामयी स्पर्श को पाकर मैं अपने सारे दुख भूल जाता हूं।<br />
+<br />
+मेरी मां ममता की देवी समान हैं। वे मुझे और मेरी बहन को हमेशा अच्छी-अच्छी बातें बताती हैं। मेरी मां मेरी आदर्श हैं। वे मुझे सच के रास्ते पर चलने की सीख देती हैं। समय का महत्व बताती हैं। कहते हैं कि मां ईश्वर के द्वारा हमें दिया गया एक वरदान है। जिसकी आंचल की छांव में हम अपने आप को सुरक्षित महसूस करते हैं और अपने सारे गम भूल जाते हैं। मैं अपनी मां से बहुत प्यार करता हूं और भगवान को धन्यवाद देता हूं कि उन्होंने मुझे दुनिया की सबसे अच्छी मां दी।</div>
+
+
+
+
+
+  <footer>
+    	<p>&copy;  2016. Design by <a href="http://kajod.com">kajod</a></p>
+    </footer>
+  </div>
+ 
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+   window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+   $('.search-box,.menu' ).hide();   
+   $('.options li:first-child').click(function(){	
+   		$(this).toggleClass('active'); 	
+   		$('.search-box').toggle();        			
+   		$('.menu').hide();  		
+   		$('.options li:last-child').removeClass('active'); 
+   });
+   $('.options li:last-child').click(function(){
+   		$(this).toggleClass('active');      			
+   		$('.menu').toggle();  		
+   		$('.search-box').hide(); 
+   		$('.options li:first-child').removeClass('active'); 		
+   });
+   $('.content').click(function(){
+   		$('.search-box,.menu' ).hide();   
+   		$('.options li:last-child, .options li:first-child').removeClass('active');
+   });
+</script>
+</body>
+</html>

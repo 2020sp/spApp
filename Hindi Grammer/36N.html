@@ -1,0 +1,103 @@
+﻿<!DOCTYPE html><title>################</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" /> 
+  <link rel="stylesheet" media="all" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="hindi recipes"/></a></div>
+      <div class="options">
+      	<ul>
+      		<li>Search</li>
+      		<li>Menu</li>
+      	</ul>
+      </div>
+      <div class="clear"></div>
+	    <div class="search-box">
+	    	<form action="#">
+	    		<input type="text" placeholder="Search gallery" />
+	    		<input type="submit" value="Go" />
+	    	</form>
+	    	<div class="clear"></div>
+	    </div>
+	    <nav class="vertical menu">
+	    	<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="single.html">Single page</a></li>
+	            <li><a href="basic_markup.html">Basic Markup Page</a></li>
+	            <li><a href="contact.html">Contact Page</a></li>
+        	</ul>
+	    </nav>
+    </header>
+    
+        
+    <div class="content">
+    
+
+
+	<article class="underline">
+	
+
+
+	
+
+<div dir="ltr" style="text-align: left;" trbidi="on">
+<span style="font-size: x-large;"><b>मेरे देश</b></span><br />
+<br />
+मेरे देश का नाम भारत है। भारत को इंडिया तथा हिंदुस्तान नाम से भी जाना जाता है। मेरे देश की जनसंख्‍या लगभग 1 अरब 21 करोड़ है। यहां अनेक भाषाओं और बोलियों को बोलने वाले लोग निवास करते हैं।<br />
+<br />
+मेरा देश धार्मिक विविधता वाला देश है। हिन्दू, सिख, बौद्ध, जैन, ईसाई, मुस्लिम आदि धर्मों को यहां एक समान दृष्टि से देखा जाता है। भारत एक धर्मनिरपेक्ष देश है।<br />
+<br />
+भारत की सभ्यता और संस्कृति दुनिया भर में विख्‍यात है। इसी से अभिभूत होकर लाखों विदेशी नागरिक प्रतिवर्ष यहां घूमने के लिए आते हैं।<br />
+<br />
+<br />
+<br />
+यहां अनेक संत और महात्माओं ने जन्म लिया है। राम, कृष्ण, बुद्ध, महावीर, कबीर, गांधी आदि महापुरुष हमारे आदर्श रहे हैं।<br />
+<br />
+महान हिमालय से रक्षित तथा पवित्र गंगा से सिंचित हमारा भारत एक स्वतंत्र आत्मनिर्भर देश है।<br />
+<br />
+मेरा देश लोकतंत्र में विश्वास रखता है। यहां सभी को उन्नति करने के समान अवसर प्राप्त हैं।<br />
+<br />
+भारत तेजी के साथ आगे बढ़ रहा है। अशिक्षा, गरीबी, बेरोजगारी आदि शत्रुओं से लोग डटकर मुकाबला कर रहे हैं। मेरे देश का राष्ट्रीय ध्वज तिरंगा है। 15 अगस्त और 26 जनवरी हमारे राष्ट्रीय त्योहार हैं।<br />
+<br />
+भारत के नागरिकों को आशा है कि मेरा देश फिर से अपने प्राचीन गौरव को हासिल कर सकेगा और एक दिन विश्वगुरू बनेगा। मैं अपने देश से बहुत प्यार करता हूं।</div>
+
+
+
+
+
+  <footer>
+    	<p>&copy;  2016. Design by <a href="http://kajod.com">kajod</a></p>
+    </footer>
+  </div>
+ 
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+   window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+   $('.search-box,.menu' ).hide();   
+   $('.options li:first-child').click(function(){	
+   		$(this).toggleClass('active'); 	
+   		$('.search-box').toggle();        			
+   		$('.menu').hide();  		
+   		$('.options li:last-child').removeClass('active'); 
+   });
+   $('.options li:last-child').click(function(){
+   		$(this).toggleClass('active');      			
+   		$('.menu').toggle();  		
+   		$('.search-box').hide(); 
+   		$('.options li:first-child').removeClass('active'); 		
+   });
+   $('.content').click(function(){
+   		$('.search-box,.menu' ).hide();   
+   		$('.options li:last-child, .options li:first-child').removeClass('active');
+   });
+</script>
+</body>
+</html>

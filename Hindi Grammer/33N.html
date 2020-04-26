@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html><title>################</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" /> 
+  <link rel="stylesheet" media="all" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="hindi recipes"/></a></div>
+      <div class="options">
+      	<ul>
+      		<li>Search</li>
+      		<li>Menu</li>
+      	</ul>
+      </div>
+      <div class="clear"></div>
+	    <div class="search-box">
+	    	<form action="#">
+	    		<input type="text" placeholder="Search gallery" />
+	    		<input type="submit" value="Go" />
+	    	</form>
+	    	<div class="clear"></div>
+	    </div>
+	    <nav class="vertical menu">
+	    	<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="single.html">Single page</a></li>
+	            <li><a href="basic_markup.html">Basic Markup Page</a></li>
+	            <li><a href="contact.html">Contact Page</a></li>
+        	</ul>
+	    </nav>
+    </header>
+    
+        
+    <div class="content">
+    
+
+
+	<article class="underline">
+	
+
+
+	
+
+ <div dir="ltr" style="text-align: left;" trbidi="on">
+<span style="font-size: x-large;"><b>विज्ञान के लाभ-हानि</b></span><br />
+<br />
+विज्ञान का अर्थ है विशेष ज्ञान। मनुष्य ने अपनी आवश्यकताओं के लिए जो नए-नए आविष्कार किए हैं, वे सब विज्ञान की ही देन हैं। आज का युग विज्ञान का युग है। विज्ञान के अनगिनत आविष्कारों के कारण मनुष्य का जीवन पहले से अधिक आरामदायक हो गया है।<br />
+<br />
+मोबाइल, इंटरनेट, ईमेल्स, मोबाइल पर 3जी और इंटरनेट के माध्यम से फेसबुक, ट्‍विटर ने तो वाकई मनुष्य की जिंदगी को बदलकर ही रख दिया है। जितनी जल्दी वह सोच सकता है लगभग उतनी ही देर में जिस व्यक्ति को चाहे मैसेज भेज सकता है, उससे बातें कर सकता है। चाहे वह दुनिया के किसी भी कोने में क्यों न हो।<br />
+<br />
+यातायात के साधनों से आज यात्रा करना अधिक सुविधाजनक हो गया है। आज महीनों की यात्रा दिनों में तथा दिनों की यात्रा चंद घंटों में पूरी हो जाती है। इतने द्रुतगति की ट्रेनें, हवाई जहाज यातायात के रूप में काम में लाए जा रहे हैं। दिन-ब-दिन इनकी गति और उपलब्धता में और सुधार हो रहा है।<br />
+<br />
+चिकित्सा के क्षेत्र में भी विज्ञान ने हमारे लिए बहुत सुविधाएं जुटाई हैं। आज कई असाध्य बीमारियों का इलाज मामूली गोलियों से हो जाता है। कैंसर और एड्‍स जैसे बीमारियों के लिए डॉक्टर्स और चिकित्सा विशेषज्ञ लगातार प्रयासरत हैं। नई-नई कोशिकाओं के निर्माण में भी सफलता प्राप्त कर ली गई है।<br />
+<br />
+सिक्के के दो पहलुओं की ही भांति इन आविष्कारों के लाभ-हानि दोनों हैं। एक ओर परमाणु ऊर्जा जहां बिजली उत्पन्न करने के काम में लाई जा सकती है। वहीं इससे बनने वाले परमाणु हथियार मानव के लिए अत्यंत विनाशकारी हैं। हाल ही में जापान में आए भूकंप के बाद वहां के परमाणु रिएक्टर्स को क्षति बहुत बड़ी त्रासदी रही।<br />
+<br />
+अत: मनुष्य को अपनी आवश्यकता और सुविधानुसार मानवता की भलाई के लिए इनका लाभ उठाना चाहिए न कि दुरुपयोग कर इनके अविष्कारों पर प्रश्नचिह्न लगाना चाहिए।</div>
+
+
+
+
+
+  <footer>
+    	<p>&copy;  2016. Design by <a href="http://kajod.com">kajod</a></p>
+    </footer>
+  </div>
+ 
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+   window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+   $('.search-box,.menu' ).hide();   
+   $('.options li:first-child').click(function(){	
+   		$(this).toggleClass('active'); 	
+   		$('.search-box').toggle();        			
+   		$('.menu').hide();  		
+   		$('.options li:last-child').removeClass('active'); 
+   });
+   $('.options li:last-child').click(function(){
+   		$(this).toggleClass('active');      			
+   		$('.menu').toggle();  		
+   		$('.search-box').hide(); 
+   		$('.options li:first-child').removeClass('active'); 		
+   });
+   $('.content').click(function(){
+   		$('.search-box,.menu' ).hide();   
+   		$('.options li:last-child, .options li:first-child').removeClass('active');
+   });
+</script>
+</body>
+</html>

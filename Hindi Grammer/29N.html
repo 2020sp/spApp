@@ -1,0 +1,93 @@
+﻿<!DOCTYPE html><title>################</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" /> 
+  <link rel="stylesheet" media="all" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="hindi recipes"/></a></div>
+      <div class="options">
+      	<ul>
+      		<li>Search</li>
+      		<li>Menu</li>
+      	</ul>
+      </div>
+      <div class="clear"></div>
+	    <div class="search-box">
+	    	<form action="#">
+	    		<input type="text" placeholder="Search gallery" />
+	    		<input type="submit" value="Go" />
+	    	</form>
+	    	<div class="clear"></div>
+	    </div>
+	    <nav class="vertical menu">
+	    	<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="single.html">Single page</a></li>
+	            <li><a href="basic_markup.html">Basic Markup Page</a></li>
+	            <li><a href="contact.html">Contact Page</a></li>
+        	</ul>
+	    </nav>
+    </header>
+    
+        
+    <div class="content">
+    
+
+
+	<article class="underline">
+	
+
+
+	
+
+<div dir="ltr" style="text-align: left;" trbidi="on">
+<span style="font-size: x-large;"><b>मेरा प्रिय मित्र</b></span><br />
+<br />
+अनुराग मेरा सबसे प्रिय मित्र है। उसका घर मेरे पास ही है। मैं प्रतिदिन उसके घर जाता हूं और उसके साथ खेलता और पढ़ता हूं। उसके पिताजी पेशे से इंजीनियर हैं। अंकल और मेरे परिवार के बीच बहुत घनिष्ठ संबंध हैं। मेरे और अनुराग के परिजन सभी एक-दूसरे को जानते हैं।<br />
+<br />
+हमारी मित्रता लगभग 8 वर्ष पुरानी है। हमारे विचार लगभग समान हैं। हमारी मित्रता में स्वार्थ की भावना दूर-दूर तक नहीं है। हम दोनों एक ही कक्षा में पढ़ते हैं।<br />
+<br />
+अनुराग बहुत नम्र लड़का है। उसका उत्साह और आत्मविश्वास गजब का है। उसकी वाणी से शालीनता और नम्रता साफ झलकती है। उसे मैंने किसी के साथ भी अभद्र स्वर में बातें करते नहीं देखा। खेल में हारकर भी वह उदास और दुखी नहीं होता है। दूसरी तरफ मैं थोड़ी सी हार भी बर्दाश्त नहीं कर सकता था। जरा-जरा सी बात में मुझे गुस्सा आ जाता था। उसे देखकर ही मेरी इस आदत में सुधार हुआ है।<br />
+<br />
+वह समय का बहुत पाबंद है। उसी ने मुझे समय का महत्व समझाया है। सच्चे मित्र की परीक्षा विपत्ति में होती है। अनुराग हमेशा मेरे घर-परिवार में होने वाले किसी भी कार्यक्रम में मेरा हाथ बंटाने के लिए तैयार रहता है। कहते हैं सच्चा मित्र ईश्वर का अमूल्य उपहार है। मुझे अपने इस दोस्त और हमारी दोस्ती पर गर्व है।</div>
+
+
+
+
+
+  <footer>
+    	<p>&copy;  2016. Design by <a href="http://kajod.com">kajod</a></p>
+    </footer>
+  </div>
+ 
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+   window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+   $('.search-box,.menu' ).hide();   
+   $('.options li:first-child').click(function(){	
+   		$(this).toggleClass('active'); 	
+   		$('.search-box').toggle();        			
+   		$('.menu').hide();  		
+   		$('.options li:last-child').removeClass('active'); 
+   });
+   $('.options li:last-child').click(function(){
+   		$(this).toggleClass('active');      			
+   		$('.menu').toggle();  		
+   		$('.search-box').hide(); 
+   		$('.options li:first-child').removeClass('active'); 		
+   });
+   $('.content').click(function(){
+   		$('.search-box,.menu' ).hide();   
+   		$('.options li:last-child, .options li:first-child').removeClass('active');
+   });
+</script>
+</body>
+</html>

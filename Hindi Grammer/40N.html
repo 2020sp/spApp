@@ -1,0 +1,95 @@
+﻿<!DOCTYPE html><title>################</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" /> 
+  <link rel="stylesheet" media="all" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="hindi recipes"/></a></div>
+      <div class="options">
+      	<ul>
+      		<li>Search</li>
+      		<li>Menu</li>
+      	</ul>
+      </div>
+      <div class="clear"></div>
+	    <div class="search-box">
+	    	<form action="#">
+	    		<input type="text" placeholder="Search gallery" />
+	    		<input type="submit" value="Go" />
+	    	</form>
+	    	<div class="clear"></div>
+	    </div>
+	    <nav class="vertical menu">
+	    	<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="single.html">Single page</a></li>
+	            <li><a href="basic_markup.html">Basic Markup Page</a></li>
+	            <li><a href="contact.html">Contact Page</a></li>
+        	</ul>
+	    </nav>
+    </header>
+    
+        
+    <div class="content">
+    
+
+
+	<article class="underline">
+	
+
+
+	
+
+<div dir="ltr" style="text-align: left;" trbidi="on">
+<span style="font-size: x-large;"><b>मेरी यात्रा</b></span><br />
+<br />
+छुटटी में हम सब घूमने जाते हैं। हम हर बार नाना-नानी के घर पर जाते हैं। लेकिन इस बार हम हरिद्वार की तीर्थ यात्रा पर गए थे। यह यात्रा हमने ट्रेन से की। हमने वहां पर खूब मस्‍ती की। मेरे परिवार में पापा-मम्‍मी, दादा-दादी और बड़ी दीदी हैं।<br />
+<br />
+हरिद्वार में हमारे गुरुजी का आश्रम है। हरिद्वार में हम सबने गंगाजी में स्‍नान कर आरती का आनंद लिया। हरिद्वार बहुत ही सुंदर तीर्थस्‍थल है। सबसे पहले हम गुरुजी के आश्रम गए। फिर हमने मंदिरों के दर्शन किए। वहां हरि की पौड़ी के सामने मनसा देवी का मंदिर है। दूसरी तरफ पहाड़ी पर चंडी देवी का मंदिर है। हरिद्वार में बहुत सुंदर मंदिर बने हैं।<br />
+<br />
+दर्शनों के बाद हम हरिद्वार से कुछ ही दूरी पर ऋषिकेश गए। वहां राम व लक्ष्मण झूला नामक पुल है। यह पुल गंगा नदी पर बने हैं। पहाड़ों के बीच बहती गंगा नदी का दर्शन बड़ा मनोरम प्रतीत होता है। यहां से खूब बड़े-बड़े पहाड़ दिखते हैं।<br />
+<br />
+हरिद्वार में पवित्र गंगा नदी पर हमने मस्‍ती की। मुझे वहां नई-नई जानकारी मिली।<br />
+<br />
+हरिद्वार में दूर-दूर से श्रद्वालु दर्शन के लिए आते हैं। यहां हर 12 साल में कुंभ का मेला लगता है। कुंभ के मेले में बहुत से साधु-संत आते हैं। हरिद्वार से लगभग कुछ ही दूरी पर ब्रदीनाथ, केदारनाथ, गंगोत्री, यमुनोत्री के पवित्र धाम भी हैं। हमारी यात्रा बहुत ही रोमांचक व यादगार रही।&nbsp;</div>
+
+
+
+
+
+  <footer>
+    	<p>&copy;  2016. Design by <a href="http://kajod.com">kajod</a></p>
+    </footer>
+  </div>
+ 
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+   window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+   $('.search-box,.menu' ).hide();   
+   $('.options li:first-child').click(function(){	
+   		$(this).toggleClass('active'); 	
+   		$('.search-box').toggle();        			
+   		$('.menu').hide();  		
+   		$('.options li:last-child').removeClass('active'); 
+   });
+   $('.options li:last-child').click(function(){
+   		$(this).toggleClass('active');      			
+   		$('.menu').toggle();  		
+   		$('.search-box').hide(); 
+   		$('.options li:first-child').removeClass('active'); 		
+   });
+   $('.content').click(function(){
+   		$('.search-box,.menu' ).hide();   
+   		$('.options li:last-child, .options li:first-child').removeClass('active');
+   });
+</script>
+</body>
+</html>

@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html><title>################</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" /> 
+  <link rel="stylesheet" media="all" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="hindi recipes"/></a></div>
+      <div class="options">
+      	<ul>
+      		<li>Search</li>
+      		<li>Menu</li>
+      	</ul>
+      </div>
+      <div class="clear"></div>
+	    <div class="search-box">
+	    	<form action="#">
+	    		<input type="text" placeholder="Search gallery" />
+	    		<input type="submit" value="Go" />
+	    	</form>
+	    	<div class="clear"></div>
+	    </div>
+	    <nav class="vertical menu">
+	    	<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="single.html">Single page</a></li>
+	            <li><a href="basic_markup.html">Basic Markup Page</a></li>
+	            <li><a href="contact.html">Contact Page</a></li>
+        	</ul>
+	    </nav>
+    </header>
+    
+        
+    <div class="content">
+    
+
+
+	<article class="underline">
+	
+
+
+	
+
+ <div dir="ltr" style="text-align: left;" trbidi="on">
+<span style="font-size: x-large;"><b>मेरा प्रिय शौक</b></span><br />
+<br />
+प्रत्येक व्यक्ति कुछ न कुछ शौक रखता है। शौक हमें आनंद देते हैं। शौक रखने से हमें ऊब नहीं होती। इससे काम के प्रति हमारा उत्साह बना रहता है। इसलिए मैं भी एक शौक रखती हूं। बागवानी मेरा सबसे प्रिय शौक है।<br />
+<br />
+मैं रोज सवेरे एक घंटे के लिए बागवानी करती हूं। मेरे घर के पिछवाड़े में थोड़ी-सी खाली जगह है। यहां मैंने एक वाटिका लगाई है। वाटिका के चारों ओर कंटीले तार और आकर्षक ढंग से कटी झाड़ियां हैं।<br />
+<br />
+गृहवाटिका में मैंने गुलाब, गेंदा, चमेली, बेली और गुलदाउदी के पौधे लगाए हैं। मैं यहां भिंडी, बैंगन, टमाटर आदि मौसमी शाक-सब्जियां भी लगाती हूं। मेरी वाटिका में अमरूद, पपीता, केला और लीची के पेड़ हैं।<br />
+<br />
+तरह-तरह के पेड़-पौधों से सजी मेरी वाटिका बहुत शोभायमान लगती है। मैं पेड़-पौधों को सींचतीं हूं। मैं इनमें यथासमय गोबर की खाद डालती हूं। मैं नए पौधों के लिए मिट्‍टी तैयार करती हूं। इन कार्यों में मुझे बेहद आनंद आता है।<br />
+<br />
+सुबह-सुबह गृहवाटिका में चलहकदमी करने से शरीर में ताजगी आती है। सुगंधित फूलों से युक्त मेरी गृहवाटिका आसपड़ोस के वातावरण को खुशनुमा बना देती है।<br />
+<br />
+मेरा शौक मुझे तन और मन की प्रसन्नता प्रदान करता है।</div>
+
+
+
+
+
+  <footer>
+    	<p>&copy;  2016. Design by <a href="http://kajod.com">kajod</a></p>
+    </footer>
+  </div>
+ 
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+   window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+   $('.search-box,.menu' ).hide();   
+   $('.options li:first-child').click(function(){	
+   		$(this).toggleClass('active'); 	
+   		$('.search-box').toggle();        			
+   		$('.menu').hide();  		
+   		$('.options li:last-child').removeClass('active'); 
+   });
+   $('.options li:last-child').click(function(){
+   		$(this).toggleClass('active');      			
+   		$('.menu').toggle();  		
+   		$('.search-box').hide(); 
+   		$('.options li:first-child').removeClass('active'); 		
+   });
+   $('.content').click(function(){
+   		$('.search-box,.menu' ).hide();   
+   		$('.options li:last-child, .options li:first-child').removeClass('active');
+   });
+</script>
+</body>
+</html>

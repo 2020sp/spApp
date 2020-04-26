@@ -1,0 +1,97 @@
+﻿<!DOCTYPE html><title>################</title>
+  <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0" /> 
+  <link rel="stylesheet" media="all" href="style.css" type="text/css">
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div class="logo"><a href="index.html"><img src="images/logo.png" alt="hindi recipes"/></a></div>
+      <div class="options">
+      	<ul>
+      		<li>Search</li>
+      		<li>Menu</li>
+      	</ul>
+      </div>
+      <div class="clear"></div>
+	    <div class="search-box">
+	    	<form action="#">
+	    		<input type="text" placeholder="Search gallery" />
+	    		<input type="submit" value="Go" />
+	    	</form>
+	    	<div class="clear"></div>
+	    </div>
+	    <nav class="vertical menu">
+	    	<ul>
+	            <li><a href="index.html">Home</a></li>
+	            <li><a href="single.html">Single page</a></li>
+	            <li><a href="basic_markup.html">Basic Markup Page</a></li>
+	            <li><a href="contact.html">Contact Page</a></li>
+        	</ul>
+	    </nav>
+    </header>
+    
+        
+    <div class="content">
+    
+
+
+	<article class="underline">
+	
+
+
+	
+
+ <div dir="ltr" style="text-align: left;" trbidi="on">
+<span style="font-size: x-large;"><b>स्कूल में मेरा पहला दिन</b></span><br />
+<br />
+मैं आठवीं कक्षा की विद्यार्थी हूं। इसी वर्ष मैंने नए स्कूल में दाखिला लिया है। इस स्कूल का पहला दिन मुझे अच्‍छी तरह याद है। मेरे लिए यह बड़ा ही रोमांचक और यादगार दिन था। मैं एक दिन पहले से ही बहुत खुश और उत्तेजित थी।<br />
+<br />
+पिताजी मेरे लिए नया स्कूल बैग, पुस्तकें लाए थे और मेरे लिए नई यूनिफॉर्म भी सिलवाई थी। मां ने कुछ सीखें दीं और पिताजी ने उत्साह भरे शब्दों के साथ मुझे स्कूल के लिए रवाना किया।<br />
+<br />
+Essay In Hindi<br />
+ND<br />
+स्कूल बस से मैं समय पर स्कूल पहुंच गई। प्रिंसिपल ने नए विद्यार्थियों का स्वागत किया। सभी विद्यार्थियों को तिलक लगाकर उनकी आरती भी उतारी गई। उन्होंने प्यार से मेरी पीठ थपथपाई। सभी बच्चों के चेहरों पर मुस्कुराहट थी और कक्षा में भी उत्साह का वातावरण था।<br />
+<br />
+कक्षा में सभी विद्या‍र्थियों से उनके नाम आदि के बारे में जानकारी ली गई। मैंने लंच ब्रेक में जाकर कैंटीन में कचोरियां भी खाईं। इसके बाद हम वापस अपनी-अपनी कक्षाओं में चले गए। फिर दो पीरियड के बाद गेम्स पीरियड आया। मैंने खो-खो खेला यह मेरा पसंदीदा खेल है।<br />
+<br />
+छुट्‍टी की घंटी बजने पर बच्चे उछलकूद करते हुए विद्यालय परिसर से बाहर आ गए। बाहर खड़ी स्कूल बस में बैठकर हम अपने-अपने घरों को आ गए। रास्ते में भी हम सब ढेर सारी बातें करते हुए घर आए। मैं इस दिन को कभी नहीं भूलूंगी।</div>
+
+
+
+
+
+  <footer>
+    	<p>&copy;  2016. Design by <a href="http://kajod.com">kajod</a></p>
+    </footer>
+  </div>
+ 
+<script src="js/jquery.min.js"></script>
+<script type="text/javascript">
+   window.addEventListener("load",function() {
+	  // Set a timeout...
+	  setTimeout(function(){
+	    // Hide the address bar!
+	    window.scrollTo(0, 1);
+	  }, 0);
+	});
+   $('.search-box,.menu' ).hide();   
+   $('.options li:first-child').click(function(){	
+   		$(this).toggleClass('active'); 	
+   		$('.search-box').toggle();        			
+   		$('.menu').hide();  		
+   		$('.options li:last-child').removeClass('active'); 
+   });
+   $('.options li:last-child').click(function(){
+   		$(this).toggleClass('active');      			
+   		$('.menu').toggle();  		
+   		$('.search-box').hide(); 
+   		$('.options li:first-child').removeClass('active'); 		
+   });
+   $('.content').click(function(){
+   		$('.search-box,.menu' ).hide();   
+   		$('.options li:last-child, .options li:first-child').removeClass('active');
+   });
+</script>
+</body>
+</html>
