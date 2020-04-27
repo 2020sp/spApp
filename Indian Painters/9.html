@@ -1,0 +1,91 @@
+﻿
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Mobilize</title> 
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
+    <script>
+		if (window.screen.height==568) { // iPhone 4"
+		document.querySelector("meta[name=viewport]").content="width=320.1";
+		}
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style4.css">
+
+    <!-- scripts -->
+	<script src="jquery-1.8.2.min.js.download"></script>
+	<script src="jquery.mobile-1.3.0.min.js.download"></script>
+	<script src="screen.js.download"></script> 
+    
+</head> 
+<body>
+
+<div data-role="page">
+	
+    
+    
+    <!-- header -->
+	<div data-role="header" class="page-header" >
+    	<a href="index.html" data-icon="arrow-l" data-iconpos="notext" data-direction="reverse" data-rel="back">Back</a>
+    		<div class="logo"></div>
+    	<a href="index.html" data-icon="home" data-iconpos="notext" rel="external" class="ui-btn-right">Home</a>
+	</div>
+    <!--/header -->
+    
+    
+    <!-- main content -->
+    <div data-role="content">
+    
+    <!-- banner & title -->
+	<div class="bannerContainer">
+		<img src="images/shadow1.png" class="banner">	
+    </div>
+  	<h2 class="pageTitle"><span>फ़र्रुख़ बेग़</span></h2>
+        <div class="shadow1box"><img src="images/shadow1.png" class="shadow1" alt="shadow"></div>
+	<!-- /banner & title -->
+    
+
+<p><strong>फ़र्रुख़ बेग़</strong> असाधारण मुग़ल चित्रकार, जिनकी प्रशंसा मुग़ल शहंशाह जहांगीर ने 'अपने समय के बेजोड़ चित्रकार' के रूप में की थी।</p>
+<ul>
+<li>मध्य एशिया के फ़र्रुख़ बेग़ ने पहले क़ाबुल में शहंशाह अकबर के सौतेले भाई मिर्ज़ा हकीम के अधीन काम किया।</li>
+<li>हकीम की मौत के बाद फ़र्रुख़ बेग़ अकबर की सेवा में आ गए (1585)। उनके प्रारंभिक चित्रों पर फ़ारसी शैली का गहरा असर रहा और वह हमेशा अपनी परंपरागत शैली में ही काम करते रहे। नए माहौल का उनकी शैली पर कोई ख़ास असर नहीं पड़ा।</li>
+<li>उनके बाद के चित्रों की अनेक विशेषताओं, बड़े-बड़े पेड़-पौधे, रंग-योजना और वस्त्रों के निरूपण से ऐसा लगता है कि उन्होंने अपने जीवन के कुछ वर्ष दक्कन में भी बिताए होंगे।</li>
+</ul>
+
+
+
+	<ul data-role="listview" data-inset="true" id="listview" style="margin-bottom:0px">
+
+
+			
+			<li><a href="10.html" data-prefetch data-ajax="false">Next</a></li>	
+		 
+			<li><a href="index.html" data-prefetch data-ajax="false">Home</a></li>
+	</ul>
+	
+	<!-- footer -->
+	<div data-role="footer">
+		<div data-role="navbar" class="custom-icons">
+			<ul>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="run" data-icon="custom" data-theme="b">Directions</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="phone2" data-icon="custom" data-theme="b">Call Us</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="photos2" data-icon="custom" data-theme="b" data-ajax="false">Portfolio</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="twitter" data-icon="custom" data-theme="b" data-ajax="false">Tweets</a></li>
+			</ul>
+		</div>
+       
+	</div>
+	<!-- /footer -->
+
+	
+</div><!-- /page -->
+
+ 
+</body>
+</html>
