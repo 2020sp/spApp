@@ -1,0 +1,106 @@
+﻿
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Mobilize</title> 
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
+    <script>
+		if (window.screen.height==568) { // iPhone 4"
+		document.querySelector("meta[name=viewport]").content="width=320.1";
+		}
+    </script>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style4.css">
+
+    <!-- scripts -->
+	<script src="jquery-1.8.2.min.js.download"></script>
+	<script src="jquery.mobile-1.3.0.min.js.download"></script>
+	<script src="screen.js.download"></script> 
+    
+</head> 
+<body>
+
+<div data-role="page">
+    
+    <!-- header -->
+	<div data-role="header" class="page-header" data-add-back-btn="true">
+    	<a href="index.html" data-icon="arrow-l" data-iconpos="notext" data-direction="reverse" data-rel="back">Back</a>
+    		<div class="logo"></div>
+    	<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse"  rel="external" class="ui-btn-right">Home</a>
+	</div>
+    <!--/header -->
+    
+    
+    <!-- main content -->
+    <div data-role="content">
+    
+    <!-- banner & title -->
+	<div class="bannerContainer">
+		<img src="images/shadow1.png" class="banner">	
+    </div>
+  	<h2 class="pageTitle"><span>Ray Dalio</span></h2>
+	<div class="shadow1box"><img src="images/shadow1.png" class="shadow1" alt="shadow"></div>
+	<!-- /banner & title -->
+    
+
+	
+    <!-- accordion -->
+    <div data-role="collapsible-set">
+
+	<h1 id="firstHeading" class="firstHeading" lang="en">Ray Dalio</h1>
+<p><strong>Ray Dalio</strong> (born August 8, 1949) is an American investor, hedge fund manager, and philanthropist. Dalio is the founder of investment firm Bridgewater Associates, one of the world's largest hedge funds.</p>
+<p>In 2012, Dalio appeared on the annual <em>Time</em> 100 list of the 100 most influential people in the world.&nbsp;In 2011 and 2012 he was listed by <em>Bloomberg Markets</em> as one of the 50 Most Influential people. <em>Institutional Investor&rsquo;s Alpha</em> ranked him No. 2 on their 2012 Rich List.&nbsp;Dalio has a fortune of $15.9 billion USD making him the 30th richest person in America&nbsp;and the 69th richest person in the world.</p>
+<h2><span id="Early_life_and_education" class="mw-headline">Early life and education</span></h2>
+<p>Dalio was born in Jackson Heights, Queens, New York, United States.&nbsp;The son of a jazz musician, Dalio began investing at age 12. At this young age he bought shares of Northeast Airlines for $300 and tripled his investment after the airline merged with another company.&nbsp;Dalio received a bachelor's degree in finance from Long Island University (CW Post) and an MBA from Harvard Business School.</p>
+<h2><span id="Investment_career" class="mw-headline">Investment career</span></h2>
+<p>After completing his education, Dalio worked on the floor of the New York Stock Exchange and invested in commodity futures.&nbsp;He later worked as the Director of Commodities at Dominick &amp; Dominick LLC.&nbsp;In 1974, he became a futures trader and broker at Shearson Hayden Stone.&nbsp;In 1975, he founded the Westport, Connecticut based investment management firm, Bridgewater Associates which in 2012 became the largest hedge fund in the world, as it is today, with over $160 billion in assets under management, as of October 2014.</p>
+<h2><span id="Personal_life" class="mw-headline">Personal life</span></h2>
+<p>Dalio is the only child of Italian American parents. He resides with his wife in Greenwich, Connecticut, and is known to practice the Transcendental Meditation technique.</p>
+<h2><span id="Political_and_economic_views" class="mw-headline">Political and economic views</span></h2>
+<p>In 2007, he predicted the global financial crisis,&nbsp;and in 2008 published an essay, "How the Economic Machine Works; A Template for Understanding What is Happening Now",&nbsp;which explained his model for the economic crisis.</p>
+<p>In 2011, he self-published a 123-page volume called Principles, which outlined his logic and personal philosophy for investments and corporate management based on a lifetime of observation, analysis and practical application through his hedge fund.</p>
+<p>In 2013, Dalio began sharing his "investment secrets" and economic theories on YouTube via a 30-minute animated video which he narrates, called <em>How The Economic Machine Works</em>; the video has since been viewed over 3.2 million times,&nbsp;and has been translated and made available in Japanese, Chinese, Russian, Spanish, German, Italian and French.</p>
+<h2><span id="Wealth_and_philanthropy" class="mw-headline">Wealth and philanthropy</span></h2>
+<p>In 2014, Dalio was listed as the wealthiest person in the state of Connecticut, with an estimated net worth of $14.3 billion.&nbsp;According to <em>Forbes Magazine,</em> Dalio has a net worth of $15.9 billion, as of February 2017.</p>
+<p>In April 2011, together with his wife Barbara, Dalio joined Bill Gates and Warren Buffett's Giving Pledge, vowing to donate more than half his fortune to charitable causes within his lifetime.</p>
+<p>&nbsp;</p>
+
+	
+
+	<ul data-role="listview" data-inset="true" id="listview" style="margin-bottom:0px">
+			 
+			<li><a href="index.html" data-prefetch data-ajax="false">Home</a></li>
+	</ul>
+		
+
+	
+	</div><!-- /content padd -->
+	</div><!-- /content -->
+	
+	<!-- footer -->
+	<div data-role="footer">
+		<div data-role="navbar" class="custom-icons">
+			<ul>
+				<li><a href="http://bit.ly/yx2mXZ" id="map" data-icon="custom" data-theme="b">Directions</a></li>
+				<li><a href="tel:18005551234" id="cell3" data-icon="custom" data-theme="b">Call Us</a></li>
+				<li><a href="portfolio.html" id="brush" data-icon="custom" data-theme="b" data-ajax="false">Portfolio</a></li>
+				<li><a href="twitter.html" id="twitter" data-icon="custom" data-theme="b" data-ajax="false">Tweets</a></li>
+			</ul>
+		</div>
+       
+	</div>
+	<!-- /footer -->
+
+	
+</div><!-- /page -->
+
+ 
+</body>
+</html>

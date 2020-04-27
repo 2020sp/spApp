@@ -1,0 +1,101 @@
+﻿
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Mobilize</title> 
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
+    <script>
+		if (window.screen.height==568) { // iPhone 4"
+		document.querySelector("meta[name=viewport]").content="width=320.1";
+		}
+    </script>
+    
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style4.css">
+
+    <!-- scripts -->
+	<script src="jquery-1.8.2.min.js.download"></script>
+	<script src="jquery.mobile-1.3.0.min.js.download"></script>
+	<script src="screen.js.download"></script> 
+    
+</head> 
+<body>
+
+<div data-role="page">
+    
+    <!-- header -->
+	<div data-role="header" class="page-header" data-add-back-btn="true">
+    	<a href="index.html" data-icon="arrow-l" data-iconpos="notext" data-direction="reverse" data-rel="back">Back</a>
+    		<div class="logo"></div>
+    	<a href="index.html" data-icon="home" data-iconpos="notext" data-direction="reverse"  rel="external" class="ui-btn-right">Home</a>
+	</div>
+    <!--/header -->
+    
+    
+    <!-- main content -->
+    <div data-role="content">
+    
+    <!-- banner & title -->
+	<div class="bannerContainer">
+		<img src="images/shadow1.png" class="banner">	
+    </div>
+  	<h2 class="pageTitle"><span>Robin Li</span></h2>
+	<div class="shadow1box"><img src="images/shadow1.png" class="shadow1" alt="shadow"></div>
+	<!-- /banner & title -->
+    
+
+	
+    <!-- accordion -->
+    <div data-role="collapsible-set">
+
+	<h1 id="firstHeading" class="firstHeading" lang="en">Robin Li</h1>
+<p><strong>Robin Li</strong> or <strong>Li Yanhong</strong> (Chinese: <span lang="zh-Hans">李彦宏</span>; pinyin: <em><span lang="zh-Latn-pinyin">Lǐ Y&agrave;nh&oacute;ng</span></em>; born 17 November 1968) is a Chinese Internet entrepreneur. He co-founded the Chinese search engine Baidu&nbsp;and is ranked as the seventh richest man in mainland China with a net worth of US$9.6 billion as of September 2015.&nbsp;He is ranked as 119th richest man in the world, according to the Hurun Report Global Rich List 2014.&nbsp;In addition, Li also serves as the member of the 12th Chinese People's Political Consultative Conference.</p>
+<p>Li studied information management at Peking University and computer science at the State University of New York at Buffalo. In 2000 he founded Baidu with Eric Xu. Li has been CEO of Baidu since January 2004. The company was listed on NASDAQ on August 5, 2005.&nbsp;Li was included as one of the <em>15 Asian Scientists To Watch</em> by <em>Asian Scientist Magazine</em> on 15 May 2011.</p>
+<p>On August 29, 2014, Robin Li has been appointed by the United Nations Secretary General, Mr. Ban Ki-Moon, as co-chair of the Independent Expert Advisory Group on Data Revolution for Sustainable Development.</p>
+<h2><span id="Early_years" class="mw-headline">Early years</span></h2>
+<p>Li was born in Shanxi Province, China, where he spent most of his childhood. Both of his parents were factory workers. Li was the fourth of five children, and the only boy.</p>
+<p>He enrolled at Peking University where he studied information management and earned a Bachelor of Science degree. In the fall of 1991, Li went to the University at Buffalo, The State University of New York in the US to study for a doctorate in computer science. He received his Master of Science in Computer Science degree in 1994 after deciding not to continue with the PhD.</p>
+<h2><span id="Road_to_Baidu" class="mw-headline">Road to Baidu</span></h2>
+<p>In 1994, Li joined IDD Information Services, a New Jersey division of Dow Jones and Company, where he helped develop a software program for the online edition of <em>The Wall Street Journal</em>.&nbsp;He also worked on improving algorithms for search engines. He remained at IDD Information Services from May 1994 to June 1997. In 1996, while at IDD, Li developed the Rankdex site-scoring algorithm for search engine page ranking,&nbsp;which was awarded a U.S. patent.&nbsp;He later used this technology for the Baidu search engine.</p>
+<p>Li worked as a staff engineer for Infoseek, a pioneer internet search engine company, from July 1997 to December 1999. An achievement of his was the picture search function used by Go.com.&nbsp;Since founding Baidu in January 2000, Li has turned the company into the largest Chinese search engine, with over 80% market share by search query, and the second largest independent search engine in the world. On 5 August 2005, Baidu successfully completed its IPO on NASDAQ, and in 2007 became the first Chinese company to be included in the NASDAQ-100 Index. He appeared in CNN Money's annual list of "50 people who matter now" in 2007.</p>
+<h2><span id="Honours" class="mw-headline">Honours</span></h2>
+<p>In 2001, he was named one of the " Chinese Top Ten Innovative Pioneers" In 2002 and 2003, he was consecutively named one of "IT Ten Famous Persons". In April 2004, he was named the second session of "Chinese Software Ten Outstanding Young Persons". On 23 August 2005, he was named the twelfth session of "ASEAN Youth Award". On 28 December 2005 he was named one of the "CCTV 2005 Chinese Economic Figures of The Year" On 10 December 2006 he was named 2006's "World's Best Business Leader" by the <em>American Business Weekly</em>.</p>
+
+	
+
+	<ul data-role="listview" data-inset="true" id="listview" style="margin-bottom:0px">
+			 
+			<li><a href="index.html" data-prefetch data-ajax="false">Home</a></li>
+	</ul>
+		
+
+	
+	</div><!-- /content padd -->
+	</div><!-- /content -->
+	
+	<!-- footer -->
+	<div data-role="footer">
+		<div data-role="navbar" class="custom-icons">
+			<ul>
+				<li><a href="http://bit.ly/yx2mXZ" id="map" data-icon="custom" data-theme="b">Directions</a></li>
+				<li><a href="tel:18005551234" id="cell3" data-icon="custom" data-theme="b">Call Us</a></li>
+				<li><a href="portfolio.html" id="brush" data-icon="custom" data-theme="b" data-ajax="false">Portfolio</a></li>
+				<li><a href="twitter.html" id="twitter" data-icon="custom" data-theme="b" data-ajax="false">Tweets</a></li>
+			</ul>
+		</div>
+       
+	</div>
+	<!-- /footer -->
+
+	
+</div><!-- /page -->
+
+ 
+</body>
+</html>
