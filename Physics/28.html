@@ -1,0 +1,88 @@
+﻿
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Mobilize</title> 
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
+    <script>
+		if (window.screen.height==568) { // iPhone 4"
+		document.querySelector("meta[name=viewport]").content="width=320.1";
+		}
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style4.css">
+
+    <!-- scripts -->
+	<script src="jquery-1.8.2.min.js.download"></script>
+	<script src="jquery.mobile-1.3.0.min.js.download"></script>
+	<script src="screen.js.download"></script> 
+    
+</head> 
+<body>
+
+<div data-role="page">
+	
+    
+    
+    <!-- header -->
+	<div data-role="header" class="page-header" >
+    	<a href="index.html" data-icon="arrow-l" data-iconpos="notext" data-direction="reverse" data-rel="back">Back</a>
+    		<div class="logo"></div>
+    	<a href="index.html" data-icon="home" data-iconpos="notext" rel="external" class="ui-btn-right">Home</a>
+	</div>
+    <!--/header -->
+    
+    
+    <!-- main content -->
+    <div data-role="content">
+    
+    <!-- banner & title -->
+	<div class="bannerContainer">
+		<img src="images/shadow1.png" class="banner">	
+    </div>
+  	<h2 class="pageTitle"><span>भू-स्थिर उपग्रह का परिक्रमण</span></h2>
+        <div class="shadow1box"><img src="images/shadow1.png" class="shadow1" alt="shadow"></div>
+	<!-- /banner & title -->
+    
+
+<p>किसी <strong>भू-स्थिर उपग्रह</strong> का परिक्रमण काल 24 घण्टे होता है, जबकि यह पृथ्वी तल से लगभग 36000 किमी की ऊँचाई पर स्थित होता है। यदि उपग्रह, पृथ्वी तल के अत्यंत निकट चक्कर लगा रहा हो, तो उसका<strong> परिक्रमण काल</strong>&nbsp; <img src="pics/9.png" alt="" /> मिनट होगा।</p>
+<p>उपग्रह का परिक्रमण काल तथा कक्षीय वेग उपग्रह के द्रव्यमान पर निर्भर नहीं करते है। ग्रह के परिक्रमण काल का वर्ग कक्षा के अर्द्धदीर्घ अक्ष के घन के अनुक्रमानुपाती होता है, अर्थात <strong>T</strong><sup>2&nbsp;</sup><strong>&prop; R</strong><sup>3</sup></p>
+<p>पृथ्वी के समीप परिक्रमा करते हुए उपग्रह की बन्धन ऊर्जा</p>
+<p><img src="pics/10.png" alt="" /></p>
+
+
+	<ul data-role="listview" data-inset="true" id="listview" style="margin-bottom:0px">
+
+
+			
+			<li><a href="29.html" data-prefetch data-ajax="false">Next</a></li>	
+		 
+			<li><a href="index.html" data-prefetch data-ajax="false">Home</a></li>
+	</ul>
+	
+	<!-- footer -->
+	<div data-role="footer">
+		<div data-role="navbar" class="custom-icons">
+			<ul>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="run" data-icon="custom" data-theme="b">Directions</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="phone2" data-icon="custom" data-theme="b">Call Us</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="photos2" data-icon="custom" data-theme="b" data-ajax="false">Portfolio</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="twitter" data-icon="custom" data-theme="b" data-ajax="false">Tweets</a></li>
+			</ul>
+		</div>
+       
+	</div>
+	<!-- /footer -->
+
+	
+</div><!-- /page -->
+
+ 
+</body>
+</html>
