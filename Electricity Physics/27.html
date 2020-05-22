@@ -1,0 +1,87 @@
+﻿
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Mobilize</title> 
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
+    <script>
+		if (window.screen.height==568) { // iPhone 4"
+		document.querySelector("meta[name=viewport]").content="width=320.1";
+		}
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style4.css">
+
+    <!-- scripts -->
+	<script src="jquery-1.8.2.min.js.download"></script>
+	<script src="jquery.mobile-1.3.0.min.js.download"></script>
+	<script src="screen.js.download"></script> 
+    
+</head> 
+<body>
+
+<div data-role="page">
+	
+    
+    
+    <!-- header -->
+	<div data-role="header" class="page-header" >
+    	<a href="index.html" data-icon="arrow-l" data-iconpos="notext" data-direction="reverse" data-rel="back">Back</a>
+    		<div class="logo"></div>
+    	<a href="index.html" data-icon="home" data-iconpos="notext" rel="external" class="ui-btn-right">Home</a>
+	</div>
+    <!--/header -->
+    
+    
+    <!-- main content -->
+    <div data-role="content">
+    
+    <!-- banner & title -->
+	<div class="bannerContainer">
+		<img src="images/shadow1.png" class="banner">	
+    </div>
+  	<h2 class="pageTitle"><span>परिपथ आरेख</span></h2>
+        <div class="shadow1box"><img src="images/shadow1.png" class="shadow1" alt="shadow"></div>
+	<!-- /banner & title -->
+    
+
+<p>किसी विद्युत परिपथ के सरलीकृत आरेख को <strong>परिपथ आरेख</strong> (circuit diagram), या <strong>विद्युत आरेख</strong> (electrical diagram) या एलेक्ट्रानिक स्कीमैटिक (electronic schematic) कहते हैं। विद्युत परिपथ में प्रयुक्त अवयवों को आरेख में उनके सरलीकृत मानक प्रतीकों के माध्यम से दर्शाया जाता है। यह जरूरी नहीं है कि आरेख में चित्रित अवयव उस विन्यास दिखाये गये हों जिस तरह से वे अन्तिम परिपथ में लगे होते हैं। परिपथ आरेख, ब्लाक आरेख (block diagram) तथा विन्यास-आरेख (layout diagram) से इस मामले में भिन्न होते हैं कि परिपथ आरेख में सभी अवयव एवं उनकी परस्पर जोड़ (connections) को विस्तारपूर्वक दर्शाया जाता है। जिस रेखाचित्र (drawing) में सभी अवयव एवं उनके आपसी जोड़ को सही आकार एवं स्थान पर दिखाया जाता है उसे <strong>आर्टवर्क</strong> (artwork) विन्यास-आरेख या भौतिक-डिजाइन (physical design) कहते हैं विद्युत प्रौद्योगिकी एवं एलेक्ट्रानिकी में परिपथ आरेखों का बहुत महत्व है। इनका उपयोग परिपथों की डिजाइन, सिमुलेशन, पीसीबी ले-आउट बनाने एवं उपकरणों को सुधारने में होता है।</p>
+<h2>संकेत या प्रतीक (Legends)</h2>
+<p>विद्युत अभियांत्रिकी तथा इलेक्ट्रॉनिकी में किसी परिपथ के चित्रमय प्रदर्शन के लिये उस परिपथ में प्रयुक्त विभिन्न अवयवों (जैसे तार, बैटरी, डायोड, प्रतिरोधआदि के लिये मानक प्रतीक उपयोग किये जाते हैं। आजकल लगभग सभी देशों में लगभग एक समान प्रतीक प्रयोग किये जा रहे हैं। किसी अवयव का प्रतीक काफी सीमा तक उस अवयव के किसी प्रमुख गुणधर्म को चित्रित करता है।</p>
+
+
+	<ul data-role="listview" data-inset="true" id="listview" style="margin-bottom:0px">
+
+
+			
+			<li><a href="28.html" data-prefetch data-ajax="false">Next</a></li>	
+		 
+			<li><a href="index.html" data-prefetch data-ajax="false">Home</a></li>
+	</ul>
+	
+	<!-- footer -->
+	<div data-role="footer">
+		<div data-role="navbar" class="custom-icons">
+			<ul>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="run" data-icon="custom" data-theme="b">Directions</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="phone2" data-icon="custom" data-theme="b">Call Us</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="photos2" data-icon="custom" data-theme="b" data-ajax="false">Portfolio</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="twitter" data-icon="custom" data-theme="b" data-ajax="false">Tweets</a></li>
+			</ul>
+		</div>
+       
+	</div>
+	<!-- /footer -->
+
+	
+</div><!-- /page -->
+
+ 
+</body>
+</html>

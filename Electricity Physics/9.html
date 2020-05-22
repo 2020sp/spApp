@@ -1,0 +1,87 @@
+﻿
+<!DOCTYPE html> 
+<html> 
+<head>
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+	<title>Mobilize</title> 
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png"/>
+    <script>
+		if (window.screen.height==568) { // iPhone 4"
+		document.querySelector("meta[name=viewport]").content="width=320.1";
+		}
+    </script>
+    <meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black">
+    
+    <!-- css -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="style4.css">
+
+    <!-- scripts -->
+	<script src="jquery-1.8.2.min.js.download"></script>
+	<script src="jquery.mobile-1.3.0.min.js.download"></script>
+	<script src="screen.js.download"></script> 
+    
+</head> 
+<body>
+
+<div data-role="page">
+	
+    
+    
+    <!-- header -->
+	<div data-role="header" class="page-header" >
+    	<a href="index.html" data-icon="arrow-l" data-iconpos="notext" data-direction="reverse" data-rel="back">Back</a>
+    		<div class="logo"></div>
+    	<a href="index.html" data-icon="home" data-iconpos="notext" rel="external" class="ui-btn-right">Home</a>
+	</div>
+    <!--/header -->
+    
+    
+    <!-- main content -->
+    <div data-role="content">
+    
+    <!-- banner & title -->
+	<div class="bannerContainer">
+		<img src="images/shadow1.png" class="banner">	
+    </div>
+  	<h2 class="pageTitle"><span>तुल्य परिपथ</span></h2>
+        <div class="shadow1box"><img src="images/shadow1.png" class="shadow1" alt="shadow"></div>
+	<!-- /banner & title -->
+    
+
+<p>किसी तन्त्र या युक्ति के गणितीय मॉडल को जब किसी विद्युत परिपथ के रूप में निरुपित किया जाता है तो इस विद्युत परिपथ को <strong>तुल्य परिपथ</strong> (equivalent circuit) कहते हैं। उदाहरण के लिये किसी बैटरी को एक आदर्श वोल्टेज स्रोत एवं एक प्रतिरोध के श्रेणीक्रम (सिरीज) संयोजन के रूप में प्रदर्शित किया जा सकता है। इसी तरह समान्तर क्रम (पैरेलेल) में जुड़े कई प्रतिरोधों के स्थान पर एक ही प्रतिरोध लगाया जा सकता है जो परिपथ से उतनी ही धारा ले जो समान्तर क्रम में जुडे सभी प्रतिरोध मिलकर लेते हैं। वैसे तो यांत्रिक या किसी अन्य प्रकार के तन्त्र को तुल्य परिपथ के रूप में प्रदर्शित किया जा सकता है किन्तु प्रायः विद्युत उपकरणों एवं युक्तियों (यथा, बैटरी, डी-सी मोटर, इन्डक्शन मोटर, ट्रान्समिशन लाइन, ट्रान्सफार्मर, ट्रान्जिस्टर, ऑप-एम्प आदि) को तुल्य परिपथ के रूप में व्यक्त किया जाता है। तुल्य परिपथ का उपयोग विभिन्न स्थितियों में इन युक्तियों के व्यवहार ज्ञात करने के लिये एवं किसी विशाल एवं जटिल विद्युत तन्त्र का विश्लेषण करने के लिये किया जाता है।</p>
+<h2>उदाहरण</h2>
+<p>स्पीकर एक विद्युत-ध्वनि (एलेक्ट्रो-एकाउस्टिक) युक्ति है। इसमें विद्युतधारा प्रवाहित कराने पर इसकी कुण्डलियों द्वारा विद्युत-चुम्बकीय बल उत्पन्न किया जाता है जो डायाफ्राम को तेजी से आगे-पीछे चलाता है। इससे उसके सम्पर्क में आने वाली वायु पर परिवर्ती बल लगता है और ध्वनि उत्पन्न होती है। किसी स्पीकर के कार्य को एक तुल्य विद्युत परिपथ द्वारा निरुपित किया जा सकता है। ऐसा परिपथ अनेक कार्योंके लिये बहुत उपयोगी होगा।</p>
+
+
+	<ul data-role="listview" data-inset="true" id="listview" style="margin-bottom:0px">
+
+
+			
+			<li><a href="10.html" data-prefetch data-ajax="false">Next</a></li>	
+		 
+			<li><a href="index.html" data-prefetch data-ajax="false">Home</a></li>
+	</ul>
+	
+	<!-- footer -->
+	<div data-role="footer">
+		<div data-role="navbar" class="custom-icons">
+			<ul>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="run" data-icon="custom" data-theme="b">Directions</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="phone2" data-icon="custom" data-theme="b">Call Us</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="photos2" data-icon="custom" data-theme="b" data-ajax="false">Portfolio</a></li>
+				<li><a href="https://www.facebook.com/mahendraseeraapps/" id="twitter" data-icon="custom" data-theme="b" data-ajax="false">Tweets</a></li>
+			</ul>
+		</div>
+       
+	</div>
+	<!-- /footer -->
+
+	
+</div><!-- /page -->
+
+ 
+</body>
+</html>
