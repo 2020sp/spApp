@@ -14,7 +14,7 @@ width: 100%;
 border-radius: 20px;
 background: black;
 color: white;
-animation: ashu 2s infinite;
+animation: ashu 4s infinite;
 }
 @keyframes ashu {
   0% {
@@ -30,15 +30,30 @@ background: green; }
 100% { background: blue; }
 }
 li{
+animation: ashi 4s infinite;
 border: 1px dotted black;
 border-radius: 30px;
 margin: 3px;
 padding: 2px;
 }
 ul{
+animation: ashi 4s infinite;
 border: 1px solid black;
 list-style: none;
 padding: 5px;
+}
+@keyframes ashi {
+  0% {
+    border-color: black;
+  }
+  25% {
+    border-color: orange;
+  }
+50% {
+border-color: red; }
+75% {
+border-color: green; }
+100% { border-color: blue; }
 }
 </style>
 </head>
