@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="stylesheet" href="style.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body{
+text-align: center;
+}
+h3{
+width: 100%;
+border-radius: 20px;
+background: black;
+color: white;
+animation: ashu 2s infinite;
+}
+@keyframes ashu {
+  0% {
+    background: black;
+  }
+  25% {
+    background: orange;
+  }
+50% {
+background: red; }
+75% {
+background: green; }
+100% { background: blue; }
+}
+li{
+border: 1px dotted black;
+border-radius: 30px;
+margin: 3px;
+padding: 2px;
+}
+ul{
+border: 1px solid black;
+list-style: none;
+padding: 5px;
+}
+</style>
+</head>
+<body>
+<h3>Fundamental</h3>
+<ul>
+<li L="1-Overview.html"></li>
+<li L="2-Applications.html"></li>
+<li L="3-Generation.html"></li>
+<li L="4-Types.html"></li>
+<li L="5-Components.html"></li>
+<li L="6-CPU.html"></li>
+<li L="7-Input Devices.html"></li>
+<li L="8-Output Devices.html"></li>
+<li L="9-Memory.html"></li>
+<li L="10-RAM.html"></li>
+<li L="11-ROM.html"></li>
+<li L="12-Motherboard.html"></li>
+<li L="13-Memory Units.html"></li>
+<li L="14-Ports.html"></li>
+<li L="15-Hardware.html"></li>
+<li L="16-Software.html"></li>
+<li L="17-Number System.html"></li>
+<li L="18-Number Conversion.html"></li>
+<li L="19-Data & Information.html"></li>
+<li L="20-Networking.html"></li>
+<li L="21-Operating System.html"></li>
+<li L="22-Internet & Intranet.html"></li>
+</ul>
+<script>
+$("ul li").each(function(){
+$(this).text($(this).attr("L").replace("-"," ").replace(".html",""));
+$(this).click(function(){
+window.open($(this).attr("L"));
+});});
+</script>
+</body>
+</html>
