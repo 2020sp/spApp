@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="stylesheet" href="style.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body{
+text-align: center;
+}
+h3{
+width: 100%;
+border-radius: 20px;
+background: black;
+color: white;
+animation: ashu 4s infinite;
+}
+@keyframes ashu {
+  0% {
+    background: black;
+  }
+  25% {
+    background: orange;
+  }
+50% {
+background: red; }
+75% {
+background: green; }
+100% { background: blue; }
+}
+li{
+border: 1px dotted black;
+border-radius: 30px;
+margin: 3px;
+padding: 2px;
+}
+ul{
+border: 1px solid black;
+list-style: none;
+padding: 5px;
+}
+</style>
+</head>
+<body>
+<h3>Fundamental</h3>
+<ul>
+<li L="1-Fundamental Concept.html"></li>
+<li L="2-Role Of Computer In Today's World.html"></li>
+<li L="3-System.html"></li>
+<li L="4-Programming Languages.html"></li>
+<li L="5-Hardware & Software.html"></li>
+<li L="6-Analog & Digital.html"></li>
+<li L="7-Operating System.html"></li>
+<li L="8-Internet.html"></li>
+<li L="9-Types Of Computer.html"></li>
+<li L="10-Computer Networking Terminology.html"></li>
+<li L="11-Applications.html"></li>
+<li L="12-Generations Of Computer.html"></li>
+<li L="13-Data Processing.html"></li>
+<li L="14-Networking.html"></li>
+<li L="15-Computer Related Jobs.html"></li>
+<li L="16-Electronic Commerce.html"></li>
+<li L="17-Software Programming.html"></li>
+<li L="18-Algorithm Flowchart.html"></li>
+<li L="19-Extranet.html"></li>
+<li L="20-Mobile.html"></li>
+<li L="21-Windows Desktop Elements.html"></li>
+<li L="22-Multimedia.html"></li>
+<li L="23-Security.html"></li>
+<li L="24-Threat.html"></li>
+<li L="25-Virus.html"></li>
+<li L="26-Abbreviations.html"></li>
+<li L="27-Development.html"></li>
+<li L="28-Innovators.html"></li>
+<li L="29-Shortcut Keys.html"></li>
+</ul>
+<script>
+$("ul li").each(function(){
+$(this).text($(this).attr("L").replace("-"," ").replace(".html",""));
+$(this).click(function(){
+window.open($(this).attr("L"));
+});});
+</script>
+</body>
+</html>
