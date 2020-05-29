@@ -1,123 +1,45 @@
 <!DOCTYPE html>
-<html>
 <head>
 <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
 <meta name="HandheldFriendly" content="true">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-<title>Read jokes for Kids & Adults</title>
+<title>Job Alerts</title>
+  <link rel="stylesheet" id="sbtt-style-css" href="http://www.freejobalert.com/wp-content/plugins/cstpg//css/sbtt-front.css?ver=3.4.2" type="text/css" media="all">
 <style>
 body{
-background: #000000;
-color: #ffffff;
+text-align: center;
 }
-i{
-font-size: 0px;
+#main{
+display: none;
 }
-.fa-question-circle{
-font-size: 30px;
-right: 10px;
-top: 10px;
+h5{
+color: black;
 position: absolute;
+top: 50%;
+left: 50%;
+transform: translateX(-50%) translateY(-50%);
 }
-.li{
-border: solid 1px #ffff00;
-border-radius: 10px;
-list-style: none;
-padding: 5%;
-margin: 5%;
+p,table{
+font-size: 12px;
+table-layout: fixed;
+width: 140%;
 }
-.li:hover{
-background: #DD0000;
-color: #FFFF00;
-font-weight: bold;
-}
-.jokes{
-border: solid 2px #ffff00;
-border-radius: 30px;
-}
-.simple-pagination ul{
-margin: 0 0 5px;
-padding: 0;
-list-style: none;
-text-align: center;
-}
-.simple-pagination li{
-display: inline-block;
-margin-right: 2px;
-}
-.simple-pagination li a,
-.simple-pagination li span{
-color: #ffff00;
-padding: 5px;
-text-decoration: none;
-border: 1px solid #EEE;
-border-radius: 10px;
-box-shadow: 0px 0px 10px 0px #EEE;
-}
-.simple-pagination .current{
-color: #000000;
-background-color: #ffff00;
-}
-.simple-pagination .current:before{
-content: "Selected,";
-font-size: 0px;
-}
-.simple-pagination .prev.current,
-.simple-pagination .next.current{
-background: #ffff00;
-}
-.simple-pagination .prev.current:after,
-.simple-pagination .next.current:after{
-content: ",Disabled";
-font-size: 0px;
-}
-.wait{
-color: #ffff00;
-font-size: 20px;
-font-weight: bold;
-list-style: none;
-text-align: center;
+td,th{
+white-space: normal; word-wrap: break-word;
 }
 </style>
 </head>
 <body>
-<center><h3>Hindi Jokes</h3></center>
-<b title="Help" role="button" class="fa fa-question-circle" onclick="if(confirm('Request:\nThere are ' + $('.li').length + ' jokes available, but still if you need any kind of help, please do not hesitate to contact us we will glad to assist you:)')){window.open('http://wa.me/919582674239?text=Hindi%20Jokes')}"></b>
-<div id="pagination-container"></div>
-<div class="jokes">
-<li class="wait">Please Wait...</li>
-</div>
+<h5>Please wait while I take you to the page:)</h5>
+<div id="main"></div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/simplePagination.js/1.6/jquery.simplePagination.js"></script>
 <script>
-$.getJSON("/spApp/others/hindijokes.json",function(data){
-$.each(data.users,function(i,get){
-$(".jokes").append("<li class='li'>" + get.name1 + "<i>,Double Tap To Copy.</i></li>");
-$(".wait").remove();
-var items = $(".jokes .li");
-var numItems = items.length;
-var perPage = 20;
-items.slice(perPage).hide();
-$('#pagination-container').pagination({
-items: numItems,
-itemsOnPage: perPage,
-currentPage: $("#pageJump").val(),
-displayedPages: 1,
-edges: 1,
-onPageClick: function (pageNumber){
-var showFrom = perPage * (pageNumber - 1);
-var showTo = showFrom + perPage;
-items.hide().slice(showFrom, showTo).show();
-}});});
-$(document).on("click",".li",function(){
-$("<textarea/>").appendTo("body").val($(this).text()).select().each(function(){
-try{
-var cmd = document.execCommand('copy')
-cmd ? alert("Copied!\nNow you can share this joke anywhere with anyone:)") : alert("Failed to copy, check your device settings or restart.")
-}catch(err){
-alert("Clipboard Access Has Denied!");
-}}).remove()});});
+$.get("https://sp-projects.000webhostapp.com/index.php?url=http://www.freejobalert.com/exam-results/22075/",function(data){
+$.each($(data).find(".PostContent"),function(){
+$("#main").append($(this).html());
+$("h5,div").not("#main").remove();
+$("#main").show();
+});});
 </script>
 </body>
 </html>
