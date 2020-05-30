@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="stylesheet" href="style.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body{
+text-align: center;
+}
+h3{
+width: 100%;
+border-radius: 20px;
+background: black;
+color: white;
+animation: ashu 4s infinite;
+}
+@keyframes ashu {
+  0% {
+    background: black;
+  }
+  25% {
+    background: orange;
+  }
+50% {
+background: red; }
+75% {
+background: green; }
+100% { background: blue; }
+}
+li{
+border: 1px dotted black;
+border-radius: 30px;
+margin: 3px;
+padding: 2px;
+}
+ul{
+border: 1px solid black;
+list-style: none;
+padding: 5px;
+}
+</style>
+</head>
+<body>
+<h3>Editing Presentation</h3>
+<ul>
+<li L="1-Copy & Paste Content.html"></li><li L="2-Find & Replace.html"></li><li L="3-Undo Edited Changes.html"></li><li L="4-Spelling Check.html"></li><li L="5-Content Translation.html"></li><li L="6-Setting Language Type.html"></li><li L="7-Duplicating Content.html"></li><li L="8-Special Characters.html"></li><li L="9-Slides Zoom In-Out.html"></li>
+</ul>
+<script>
+$("ul li").each(function(){
+$(this).text($(this).attr("L").replace("-"," ").replace(".html",""));
+$(this).click(function(){
+window.open($(this).attr("L"));
+});});
+</script>
+</body>
+</html>
