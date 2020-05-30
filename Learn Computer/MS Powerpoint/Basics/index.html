@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<head>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link rel="stylesheet" href="style.css"/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body{
+text-align: center;
+}
+h3{
+width: 100%;
+border-radius: 20px;
+background: black;
+color: white;
+animation: ashu 4s infinite;
+}
+@keyframes ashu {
+  0% {
+    background: black;
+  }
+  25% {
+    background: orange;
+  }
+50% {
+background: red; }
+75% {
+background: green; }
+100% { background: blue; }
+}
+li{
+border: 1px dotted black;
+border-radius: 30px;
+margin: 3px;
+padding: 2px;
+}
+ul{
+border: 1px solid black;
+list-style: none;
+padding: 5px;
+}
+</style>
+</head>
+<body>
+<h3>Basics</h3>
+<ul>
+<li L="1-Getting Started.html"></li><li L="2-Explore Windows.html"></li><li L="3-Backstage View.html"></li><li L="4-Create Presentation.html"></li><li L="5-Add New Slides.html"></li><li L="6-Adding Text In Boxes.html"></li><li L="7-Adding New Text Boxes.html"></li><li L="8-Deleting Existing Slide.html"></li><li L="9-Rearranging Slides.html"></li><li L="10-Adding Slide Notes.html"></li><li L="11-Managing Sections.html"></li><li L="12-Working With Outlines.html"></li><li L="13-Sliders.html"></li><li L="14-Presentation Views.html"></li><li L="15-Setting Backgrounds.html"></li><li L="16-Slide Orientations.html"></li><li L="17-Saving Presentation.html"></li><li L="18-Review Presentation.html"></li><li L="19-Adding Slide Numbers.html"></li><li L="20-Adding Header & Footer.html"></li><li L="21-Running Slide Show.html"></li><li L="22-Keyboard Shortcuts.html"></li>
+</ul>
+<script>
+$("ul li").each(function(){
+$(this).text($(this).attr("L").replace("-"," ").replace(".html",""));
+$(this).click(function(){
+window.open($(this).attr("L"));
+});});
+</script>
+</body>
+</html>
