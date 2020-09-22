@@ -1,1 +1,1 @@
-https://cors-anywhere.herokuapp.com/
+https://cors-bypasser.glitch.me/bypass/
