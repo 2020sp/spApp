@@ -1,1 +1,1 @@
-https://sp-projects.000webhostapp.com/index.php?url=
+https://cors-anywhere.herokuapp.com/
