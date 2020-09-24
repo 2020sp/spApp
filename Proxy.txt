@@ -1,1 +1,1 @@
-https://www.tech-freedom.com/a_k/?url=
+https://api.codetabs.com/v1/proxy/?quest=
