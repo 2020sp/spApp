@@ -1,6 +1,6 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 <script>
-if(localStorage.getItem("dark-mode")){
+if(window.localStorage.getItem("dark-mode")){
 $("style").each(function(){
 $(this).html($(this).html().replace(/white/g,"blk").replace(/black/g,"white").replace(/blk/g,"black").replace(/#f1f1f1/g,"#505050"));
 $("body").css({"background":"black","color":"white"});
