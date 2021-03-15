@@ -15,7 +15,7 @@ h3{
 color: blue;
 text-align: center;
 }
-#dev,#ct a{
+#dev{
 align-items: center;
 display: flex;
 font-size: 20px;
@@ -28,16 +28,24 @@ padding: 8px;
 border-radius: 36px;
 box-shadow: 9px 9px 9px rgba(0, 0, 0, 0.05), -9px -9px 9px rgba(255, 255, 255, 0.6), inset 2px 2px 3px rgba(0, 0, 0, 0.03), inset -2px -2px 3px rgba(255, 255, 255, 0.4);
 }
-#ct a{
+#ct button{
+background: #f1f8fd;
+border: none;
+border-radius: 20px;
+box-shadow: 3px 3px 7px lightgray, inset -4px -4px 8px rgba(255, 255, 255, 0.5),
+inset 8px 8px 16px rgba(0, 0, 0, 0.1);
 display: inline-block;
-margin: 15px;
-text-decoration: none;
-height: 24px;
-width: 8%;
+font-size: 18px;
+margin: 18px;
+height: 60px;
+width: 60px;
 }
-#ct a:hover{
+#ct button:hover{
 box-shadow: inset 6px 6px 6px rgba(0, 0, 0, 0.05),
 inset -6px -6px 6px rgba(255, 255, 255, 0.5);
+}
+.fa-whatsapp{
+font-size: 23px !important;
 }
 </style>
 </head>
@@ -53,11 +61,10 @@ inset -6px -6px 6px rgba(255, 255, 255, 0.5);
 <li>Stallon Peris</li>
 <li>Zaiyad Radrigo</li>
 </ol>
-<hr/>
 <center id="ct">
-<a title="WhatsApp" role="button" class="fa fa-whatsapp" href="https://wa.me/919582674239?text=Saathi"></a>
-<a title="Email" role="button" class="fa fa-envelope" href="mailto:smartprogrammers.sp@gmail.com"></a>
-<a title="Call" role="button" class="fa fa-phone" href="tel:+919582674239"></a>
+<button title="WhatsApp" class="fa fa-whatsapp" onclick="window.open('https://wa.me/919582674239?text=Saathi')"></button>
+<button title="Email" class="fa fa-envelope" onclick="window.open('mailto:smartprogrammers.sp@gmail.com')"></button>
+<button title="Call" class="fa fa-phone" onclick="window.open('tel:+919582674239')"></button>
 </center>
 </body>
 </html>
