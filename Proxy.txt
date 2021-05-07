@@ -1,1 +1,1 @@
-https://api.codetabs.com/v1/proxy?quest=
+https://vsp.org.pk/sp/fire.php?url=
