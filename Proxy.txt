@@ -1,1 +1,1 @@
-https://vsp.org.pk/sp/fire.php?agent=safari&url=
+https://vsp.org.pk/sp/fire.php?agent=android&url=
