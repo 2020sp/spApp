@@ -1,1 +1,1 @@
-https://vsp.org.pk/sp/fire.php?url=
+https://vsp.org.pk/sp/fire.php?agent=chrome&url=
