@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<head>
+<title>SP Media Player</title>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="HandheldFriendly" content="true">
+<link href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css' rel='stylesheet' type='text/css'>
+<style>
+select{
+-webkit-appearance: none;
+}
+body{
+background: black;
+color: white;
+width: 98%;
+}
+#MyTitle{
+border: 1px dotted white;
+border-radius: 30px;
+color: #ffff00;
+font-weight: bold;
+overflow: hidden;
+text-align: center;
+width: 95%;
+}
+.marquee{
+text-align: center;
+width: 95%;
+transform:translateX(100%);
+animation: scroll-left 10s linear infinite;
+}
+@keyframes scroll-left{0%{ 
+transform: translateX(100%); 		
+}100%{ 
+transform: translateX(-100%); 
+}}
+#btns button{
+background: black;
+border: 2px solid white;
+color: white;
+text-align: center;
+height: 35px;
+width: 35px;
+}
+#btns #prev, #btns #next{
+height: 45px;
+width: 45px;
+}
+#btns #play, #btns #pause{
+font-size: 22px;
+font-weight: bold;
+height: 55px;
+width: 55px;
+}
+#btns #play{
+color: #00FF00;
+}
+#btns #pause{
+color: #FF0000;
+}
+i{
+font-size: 0px;
+}
+#pbRate{
+background: black;
+border: solid 1px white;
+color: white;
+text-align-last: center;
+width: 55px;
+}
+#progress-bar {
+display: block;
+height: 5px;
+margin-left: 28%;
+margin-top: 10px;
+position: absolute;
+width: 40%;
+background: url(https://i.ibb.co/n108ZL0/progress-bg.png) no-repeat;
+}
+#progress{
+float: left;
+background: url(https://i.ibb.co/nC43tVd/progress.png) no-repeat;
+display: inline-block;
+height: 5px;
+}
+.PBP{
+margin-top: 35px;
+width: 98%;
+}
+.PBP span{
+background: white;
+border-radius: 5px;
+}
+#current{
+display: block;
+float: left;
+position: absolute;
+background: #0000cc;
+color: white;
+font-weight: bold;
+}
+#duration{
+float: right;
+background: #0000cc;
+color: white;
+font-weight: bold;
+}
+#playlist{
+background: #0000CC;
+width: 98%;
+border: 2px solid green;
+}
+#playlist li{
+list-style: none;
+background: pink;
+border: 1px solid black;
+color: black;
+}
+#playlist li.active{
+background: red;
+color: white;
+font-weight: bold;
+}
+.active::before{
+content: "Selected:";
+font-size: 0px;
+}
+#Toast{
+background: black;
+bottom: 5px;
+display: none;
+position: fixed;
+text-align: center;
+width: 100%;
+}
+</style>
+</head>
+<body>
+<div id="MyTitle"><div id="Title"></div></div>
+<audio id="MyPlayer"></audio>
+<div class="PBP"><span id="current"><i>Current Duration</i>0<i>Minutes &</i>:00<i>Seconds</i></span>
+<div id="progress-bar"><span id="progress"></span></div>
+<span id="duration"><i>Total Duration</i>0<i>Minutes &</i>:00<i>Seconds</i></span></div>
+<br/><br/>
+<center><div id="btns">
+<div id="Toast" aria-live="polite"></div>
+<button class="fa fa-backward" id="rewind"><i>Rewind</i></button>
+<button class="fa fa-step-backward" id="prev"><i>Previous</i></button>
+<button class="fa fa-play" id="play"><i>Play</i></button>
+<button class="fa fa-pause" id="pause"><i>Pause</i></button>
+<button class="fa fa-step-forward" id="next"><i>Next</i></button>
+<button class="fa fa-forward" id="forward"><i>Forward</i></button>
+<br/>
+<select id="pbRate" title="PlayBack Speed">
+<optgroup label="PlayBack Speed">
+<option value="0.5">0.5</option>
+<option value="1" selected>Normal</option>
+<option value="1.5">1.5</option>
+<option value="2">2</option>
+<option value="2.5">2.5</option>
+<option value="3">3</option>
+</optgroup>
+</select>
+</div>
+</center>
+<br/>
+<div id="playlist">
+<li URL="dtb_0001.mp3">Track 1</li>
+<li URL="dtb_0002.mp3">Track 2</li>
+<li URL="dtb_0003.mp3">Track 3</li>
+<li URL="dtb_0004.mp3">Track 4</li>
+<li URL="dtb_0005.mp3">Track 5</li>
+<li URL="dtb_0006.mp3">Track 6</li>
+<li URL="dtb_0007.mp3">Track 7</li>
+<li URL="dtb_0008.mp3">Track 8</li>
+<li URL="dtb_0009.mp3">Track 9</li>
+<li URL="dtb_0010.mp3">Track 10</li>
+<li URL="dtb_0011.mp3">Track 11</li>
+<li URL="dtb_0012.mp3">Track 12</li>
+<li URL="dtb_0013.mp3">Track 13</li>
+<li URL="dtb_0014.mp3">Track 14</li>
+<li URL="dtb_0015.mp3">Track 15</li>
+<li URL="dtb_0016.mp3">Track 16</li>
+<li URL="dtb_0017.mp3">Track 17</li>
+<li URL="dtb_0018.mp3">Track 18</li>
+<li URL="dtb_0019.mp3">Track 19</li>
+<li URL="dtb_0020.mp3">Track 20</li>
+<li URL="dtb_0021.mp3">Track 21</li>
+<li URL="dtb_0022.mp3">Track 22</li>
+<li URL="dtb_0023.mp3">Track 23</li>
+<li URL="dtb_0024.mp3">Track 24</li>
+<li URL="dtb_0025.mp3">Track 25</li>
+<li URL="dtb_0026.mp3">Track 26</li>
+<li URL="dtb_0027.mp3">Track 27</li>
+<li URL="dtb_0028.mp3">Track 28</li>
+<li URL="dtb_0029.mp3">Track 29</li>
+<li URL="dtb_0030.mp3">Track 30</li>
+<li URL="dtb_0031.mp3">Track 31</li>
+<li URL="dtb_0032.mp3">Track 32</li>
+<li URL="dtb_0033.mp3">Track 33</li>
+<li URL="dtb_0034.mp3">Track 34</li>
+<li URL="dtb_0035.mp3">Track 35</li>
+<li URL="dtb_0036.mp3">Track 36</li>
+<li URL="dtb_0037.mp3">Track 37</li>
+<li URL="dtb_0038.mp3">Track 38</li>
+<li URL="dtb_0039.mp3">Track 39</li>
+<li URL="dtb_0040.mp3">Track 40</li>
+<li URL="dtb_0041.mp3">Track 41</li>
+<li URL="dtb_0042.mp3">Track 42</li>
+<li URL="dtb_0043.mp3">Track 43</li>
+<li URL="dtb_0044.mp3">Track 44</li>
+<li URL="dtb_0045.mp3">Track 45</li>
+<li URL="dtb_0046.mp3">Track 46</li>
+<li URL="dtb_0047.mp3">Track 47</li>
+<li URL="dtb_0048.mp3">Track 48</li>
+<li URL="dtb_0049.mp3">Track 49</li>
+<li URL="dtb_0050.mp3">Track 50</li>
+<li URL="dtb_0051.mp3">Track 51</li>
+<li URL="dtb_0052.mp3">Track 52</li>
+<li URL="dtb_0053.mp3">Track 53</li>
+<li URL="dtb_0054.mp3">Track 54</li>
+<li URL="dtb_0055.mp3">Track 55</li>
+<li URL="dtb_0056.mp3">Track 56</li>
+<li URL="dtb_0057.mp3">Track 57</li>
+<li URL="dtb_0058.mp3">Track 58</li>
+<li URL="dtb_0059.mp3">Track 59</li>
+<li URL="dtb_0060.mp3">Track 60</li>
+<li URL="dtb_0061.mp3">Track 61</li>
+<li URL="dtb_0062.mp3">Track 62</li>
+<li URL="dtb_0063.mp3">Track 63</li>
+<li URL="dtb_0064.mp3">Track 64</li>
+<li URL="dtb_0065.mp3">Track 65</li>
+<li URL="dtb_0066.mp3">Track 66</li>
+<li URL="dtb_0067.mp3">Track 67</li>
+<li URL="dtb_0068.mp3">Track 68</li>
+<li URL="dtb_0069.mp3">Track 69</li>
+<li URL="dtb_0070.mp3">Track 70</li>
+<li URL="dtb_0071.mp3">Track 71</li>
+<li URL="dtb_0072.mp3">Track 72</li>
+<li URL="dtb_0073.mp3">Track 73</li>
+<li URL="dtb_0074.mp3">Track 74</li>
+<li URL="dtb_0075.mp3">Track 75</li>
+<li URL="dtb_0076.mp3">Track 76</li>
+<li URL="dtb_0077.mp3">Track 77</li>
+<li URL="dtb_0078.mp3">Track 78</li>
+<li URL="dtb_0079.mp3">Track 79</li>
+<li URL="dtb_0080.mp3">Track 80</li>
+<li URL="dtb_0081.mp3">Track 81</li>
+<li URL="dtb_0082.mp3">Track 82</li>
+<li URL="dtb_0083.mp3">Track 83</li>
+<li URL="dtb_0084.mp3">Track 84</li>
+<li URL="dtb_0085.mp3">Track 85</li>
+<li URL="dtb_0086.mp3">Track 86</li>
+<li URL="dtb_0087.mp3">Track 87</li>
+<li URL="dtb_0088.mp3">Track 88</li>
+<li URL="dtb_0089.mp3">Track 89</li>
+<li URL="dtb_0090.mp3">Track 90</li>
+<li URL="dtb_0091.mp3">Track 91</li>
+<li URL="dtb_0092.mp3">Track 92</li>
+<li URL="dtb_0093.mp3">Track 93</li>
+<li URL="dtb_0094.mp3">Track 94</li>
+<li URL="dtb_0095.mp3">Track 95</li>
+<li URL="dtb_0096.mp3">Track 96</li>
+<li URL="dtb_0097.mp3">Track 97</li>
+<li URL="dtb_0098.mp3">Track 98</li>
+<li URL="dtb_0099.mp3">Track 99</li>
+<li URL="dtb_0100.mp3">Track 100</li>
+<li URL="dtb_0101.mp3">Track 101</li>
+<li URL="dtb_0102.mp3">Track 102</li>
+<li URL="dtb_0103.mp3">Track 103</li>
+<li URL="dtb_0104.mp3">Track 104</li>
+<li URL="dtb_0105.mp3">Track 105</li>
+<li URL="dtb_0106.mp3">Track 106</li>
+<li URL="dtb_0107.mp3">Track 107</li>
+<li URL="dtb_0108.mp3">Track 108</li>
+<li URL="dtb_0109.mp3">Track 109</li>
+<li URL="dtb_0110.mp3">Track 110</li>
+<li URL="dtb_0111.mp3">Track 111</li>
+<li URL="dtb_0112.mp3">Track 112</li>
+<li URL="dtb_0113.mp3">Track 113</li>
+<li URL="dtb_0114.mp3">Track 114</li>
+<li URL="dtb_0115.mp3">Track 115</li>
+<li URL="dtb_0116.mp3">Track 116</li>
+<li URL="dtb_0117.mp3">Track 117</li>
+<li URL="dtb_0118.mp3">Track 118</li>
+<li URL="dtb_0119.mp3">Track 119</li>
+<li URL="dtb_0120.mp3">Track 120</li>
+<li URL="dtb_0121.mp3">Track 121</li>
+<li URL="dtb_0122.mp3">Track 122</li>
+<li URL="dtb_0123.mp3">Track 123</li>
+<li URL="dtb_0124.mp3">Track 124</li>
+<li URL="dtb_0125.mp3">Track 125</li>
+<li URL="dtb_0126.mp3">Track 126</li>
+<li URL="dtb_0127.mp3">Track 127</li>
+<li URL="dtb_0128.mp3">Track 128</li>
+<li URL="dtb_0129.mp3">Track 129</li>
+<li URL="dtb_0130.mp3">Track 130</li>
+<li URL="dtb_0131.mp3">Track 131</li>
+<li URL="dtb_0132.mp3">Track 132</li>
+<li URL="dtb_0133.mp3">Track 133</li>
+<li URL="dtb_0134.mp3">Track 134</li>
+<li URL="dtb_0135.mp3">Track 135</li>
+<li URL="dtb_0136.mp3">Track 136</li>
+<li URL="dtb_0137.mp3">Track 137</li>
+<li URL="dtb_0138.mp3">Track 138</li>
+<li URL="dtb_0139.mp3">Track 139</li>
+<li URL="dtb_0140.mp3">Track 140</li>
+<li URL="dtb_0141.mp3">Track 141</li>
+<li URL="dtb_0142.mp3">Track 142</li>
+<li URL="dtb_0143.mp3">Track 143</li>
+<li URL="dtb_0144.mp3">Track 144</li>
+<li URL="dtb_0145.mp3">Track 145</li>
+<li URL="dtb_0146.mp3">Track 146</li>
+<li URL="dtb_0147.mp3">Track 147</li>
+<li URL="dtb_0148.mp3">Track 148</li>
+<li URL="dtb_0149.mp3">Track 149</li>
+<li URL="dtb_0150.mp3">Track 150</li>
+<li URL="dtb_0151.mp3">Track 151</li>
+<li URL="dtb_0152.mp3">Track 152</li>
+<li URL="dtb_0153.mp3">Track 153</li>
+<li URL="dtb_0154.mp3">Track 154</li>
+<li URL="dtb_0155.mp3">Track 155</li>
+<li URL="dtb_0156.mp3">Track 156</li>
+<li URL="dtb_0157.mp3">Track 157</li>
+<li URL="dtb_0158.mp3">Track 158</li>
+<li URL="dtb_0159.mp3">Track 159</li>
+<li URL="dtb_0160.mp3">Track 160</li>
+<li URL="dtb_0161.mp3">Track 161</li>
+<li URL="dtb_0162.mp3">Track 162</li>
+<li URL="dtb_0163.mp3">Track 163</li>
+<li URL="dtb_0164.mp3">Track 164</li>
+<li URL="dtb_0165.mp3">Track 165</li>
+<li URL="dtb_0166.mp3">Track 166</li>
+<li URL="dtb_0167.mp3">Track 167</li>
+<li URL="dtb_0168.mp3">Track 168</li>
+<li URL="dtb_0169.mp3">Track 169</li>
+<li URL="dtb_0170.mp3">Track 170</li>
+<li URL="dtb_0171.mp3">Track 171</li>
+<li URL="dtb_0172.mp3">Track 172</li>
+<li URL="dtb_0173.mp3">Track 173</li>
+<li URL="dtb_0174.mp3">Track 174</li>
+<li URL="dtb_0175.mp3">Track 175</li>
+<li URL="dtb_0176.mp3">Track 176</li>
+<li URL="dtb_0177.mp3">Track 177</li>
+<li URL="dtb_0178.mp3">Track 178</li>
+<li URL="dtb_0179.mp3">Track 179</li>
+<li URL="dtb_0180.mp3">Track 180</li>
+<li URL="dtb_0181.mp3">Track 181</li>
+<li URL="dtb_0182.mp3">Track 182</li>
+<li URL="dtb_0183.mp3">Track 183</li>
+<li URL="dtb_0184.mp3">Track 184</li>
+<li URL="dtb_0185.mp3">Track 185</li>
+<li URL="dtb_0186.mp3">Track 186</li>
+<li URL="dtb_0187.mp3">Track 187</li>
+<li URL="dtb_0188.mp3">Track 188</li>
+<li URL="dtb_0189.mp3">Track 189</li>
+<li URL="dtb_0190.mp3">Track 190</li>
+<li URL="dtb_0191.mp3">Track 191</li>
+<li URL="dtb_0192.mp3">Track 192</li>
+<li URL="dtb_0193.mp3">Track 193</li>
+<li URL="dtb_0194.mp3">Track 194</li>
+<li URL="dtb_0195.mp3">Track 195</li>
+<li URL="dtb_0196.mp3">Track 196</li>
+<li URL="dtb_0197.mp3">Track 197</li>
+<li URL="dtb_0198.mp3">Track 198</li>
+<li URL="dtb_0199.mp3">Track 199</li>
+<li URL="dtb_0200.mp3">Track 200</li>
+<li URL="dtb_0201.mp3">Track 201</li>
+<li URL="dtb_0202.mp3">Track 202</li>
+<li URL="dtb_0203.mp3">Track 203</li>
+<li URL="dtb_0204.mp3">Track 204</li>
+<li URL="dtb_0205.mp3">Track 205</li>
+<li URL="dtb_0206.mp3">Track 206</li>
+<li URL="dtb_0207.mp3">Track 207</li>
+<li URL="dtb_0208.mp3">Track 208</li>
+<li URL="dtb_0209.mp3">Track 209</li>
+<li URL="dtb_0210.mp3">Track 210</li>
+<li URL="dtb_0211.mp3">Track 211</li>
+<li URL="dtb_0212.mp3">Track 212</li>
+<li URL="dtb_0213.mp3">Track 213</li>
+<li URL="dtb_0214.mp3">Track 214</li>
+<li URL="dtb_0215.mp3">Track 215</li>
+<li URL="dtb_0216.mp3">Track 216</li>
+<li URL="dtb_0217.mp3">Track 217</li>
+<li URL="dtb_0218.mp3">Track 218</li>
+<li URL="dtb_0219.mp3">Track 219</li>
+<li URL="dtb_0220.mp3">Track 220</li>
+<li URL="dtb_0221.mp3">Track 221</li>
+<li URL="dtb_0222.mp3">Track 222</li>
+<li URL="dtb_0223.mp3">Track 223</li>
+<li URL="dtb_0224.mp3">Track 224</li>
+<li URL="dtb_0225.mp3">Track 225</li>
+<li URL="dtb_0226.mp3">Track 226</li>
+<li URL="dtb_0227.mp3">Track 227</li>
+<li URL="dtb_0228.mp3">Track 228</li>
+<li URL="dtb_0229.mp3">Track 229</li>
+<li URL="dtb_0230.mp3">Track 230</li>
+<li URL="dtb_0231.mp3">Track 231</li>
+<li URL="dtb_0232.mp3">Track 232</li>
+<li URL="dtb_0233.mp3">Track 233</li>
+<li URL="dtb_0234.mp3">Track 234</li>
+<li URL="dtb_0235.mp3">Track 235</li>
+<li URL="dtb_0236.mp3">Track 236</li>
+<li URL="dtb_0237.mp3">Track 237</li>
+<li URL="dtb_0238.mp3">Track 238</li>
+<li URL="dtb_0239.mp3">Track 239</li>
+<li URL="dtb_0240.mp3">Track 240</li>
+<li URL="dtb_0241.mp3">Track 241</li>
+<li URL="dtb_0242.mp3">Track 242</li>
+<li URL="dtb_0243.mp3">Track 243</li>
+<li URL="dtb_0244.mp3">Track 244</li>
+<li URL="dtb_0245.mp3">Track 245</li>
+<li URL="dtb_0246.mp3">Track 246</li>
+<li URL="dtb_0247.mp3">Track 247</li>
+<li URL="dtb_0248.mp3">Track 248</li>
+<li URL="dtb_0249.mp3">Track 249</li>
+<li URL="dtb_0250.mp3">Track 250</li>
+<li URL="dtb_0251.mp3">Track 251</li>
+<li URL="dtb_0252.mp3">Track 252</li>
+<li URL="dtb_0253.mp3">Track 253</li>
+<li URL="dtb_0254.mp3">Track 254</li>
+<li URL="dtb_0255.mp3">Track 255</li>
+<li URL="dtb_0256.mp3">Track 256</li>
+<li URL="dtb_0257.mp3">Track 257</li>
+<li URL="dtb_0258.mp3">Track 258</li>
+<li URL="dtb_0259.mp3">Track 259</li>
+<li URL="dtb_0260.mp3">Track 260</li>
+<li URL="dtb_0261.mp3">Track 261</li>
+<li URL="dtb_0262.mp3">Track 262</li>
+<li URL="dtb_0263.mp3">Track 263</li>
+<li URL="dtb_0264.mp3">Track 264</li>
+<li URL="dtb_0265.mp3">Track 265</li>
+<li URL="dtb_0266.mp3">Track 266</li>
+<li URL="dtb_0267.mp3">Track 267</li>
+<li URL="dtb_0268.mp3">Track 268</li>
+<li URL="dtb_0269.mp3">Track 269</li>
+<li URL="dtb_0270.mp3">Track 270</li>
+<li URL="dtb_0271.mp3">Track 271</li>
+<li URL="dtb_0272.mp3">Track 272</li>
+<li URL="dtb_0273.mp3">Track 273</li>
+<li URL="dtb_0274.mp3">Track 274</li>
+<li URL="dtb_0275.mp3">Track 275</li>
+<li URL="dtb_0276.mp3">Track 276</li>
+<li URL="dtb_0277.mp3">Track 277</li>
+<li URL="dtb_0278.mp3">Track 278</li>
+<li URL="dtb_0279.mp3">Track 279</li>
+<li URL="dtb_0280.mp3">Track 280</li>
+<li URL="dtb_0281.mp3">Track 281</li>
+<li URL="dtb_0282.mp3">Track 282</li>
+<li URL="dtb_0283.mp3">Track 283</li>
+<li URL="dtb_0284.mp3">Track 284</li>
+<li URL="dtb_0285.mp3">Track 285</li>
+<li URL="dtb_0286.mp3">Track 286</li>
+<li URL="dtb_0287.mp3">Track 287</li>
+<li URL="dtb_0288.mp3">Track 288</li>
+<li URL="dtb_0289.mp3">Track 289</li>
+<li URL="dtb_0290.mp3">Track 290</li>
+<li URL="dtb_0291.mp3">Track 291</li>
+<li URL="dtb_0292.mp3">Track 292</li>
+<li URL="dtb_0293.mp3">Track 293</li>
+<li URL="dtb_0294.mp3">Track 294</li>
+<li URL="dtb_0295.mp3">Track 295</li>
+<li URL="dtb_0296.mp3">Track 296</li>
+<li URL="dtb_0297.mp3">Track 297</li>
+<li URL="dtb_0298.mp3">Track 298</li>
+<li URL="dtb_0299.mp3">Track 299</li>
+<li URL="dtb_0300.mp3">Track 300</li>
+<li URL="dtb_0301.mp3">Track 301</li>
+<li URL="dtb_0302.mp3">Track 302</li>
+<li URL="dtb_0303.mp3">Track 303</li>
+<li URL="dtb_0304.mp3">Track 304</li>
+<li URL="dtb_0305.mp3">Track 305</li>
+<li URL="dtb_0306.mp3">Track 306</li>
+<li URL="dtb_0307.mp3">Track 307</li>
+<li URL="dtb_0308.mp3">Track 308</li>
+<li URL="dtb_0309.mp3">Track 309</li>
+<li URL="dtb_0310.mp3">Track 310</li>
+<li URL="dtb_0311.mp3">Track 311</li>
+<li URL="dtb_0312.mp3">Track 312</li>
+<li URL="dtb_0313.mp3">Track 313</li>
+<li URL="dtb_0314.mp3">Track 314</li>
+<li URL="dtb_0315.mp3">Track 315</li>
+<li URL="dtb_0316.mp3">Track 316</li>
+<li URL="dtb_0317.mp3">Track 317</li>
+<li URL="dtb_0318.mp3">Track 318</li>
+<li URL="dtb_0319.mp3">Track 319</li>
+<li URL="dtb_0320.mp3">Track 320</li>
+<li URL="dtb_0321.mp3">Track 321</li>
+<li URL="dtb_0322.mp3">Track 322</li>
+<li URL="dtb_0323.mp3">Track 323</li>
+<li URL="dtb_0324.mp3">Track 324</li>
+<li URL="dtb_0325.mp3">Track 325</li>
+<li URL="dtb_0326.mp3">Track 326</li>
+<li URL="dtb_0327.mp3">Track 327</li>
+<li URL="dtb_0328.mp3">Track 328</li>
+<li URL="dtb_0329.mp3">Track 329</li>
+<li URL="dtb_0330.mp3">Track 330</li>
+<li URL="dtb_0331.mp3">Track 331</li>
+<li URL="dtb_0332.mp3">Track 332</li>
+<li URL="dtb_0333.mp3">Track 333</li>
+<li URL="dtb_0334.mp3">Track 334</li>
+<li URL="dtb_0335.mp3">Track 335</li>
+<li URL="dtb_0336.mp3">Track 336</li>
+<li URL="dtb_0337.mp3">Track 337</li>
+<li URL="dtb_0338.mp3">Track 338</li>
+<li URL="dtb_0339.mp3">Track 339</li>
+<li URL="dtb_0340.mp3">Track 340</li>
+<li URL="dtb_0341.mp3">Track 341</li>
+<li URL="dtb_0342.mp3">Track 342</li>
+<li URL="dtb_0343.mp3">Track 343</li>
+<li URL="dtb_0344.mp3">Track 344</li>
+<li URL="dtb_0345.mp3">Track 345</li>
+<li URL="dtb_0346.mp3">Track 346</li>
+<li URL="dtb_0347.mp3">Track 347</li>
+<li URL="dtb_0348.mp3">Track 348</li>
+<li URL="dtb_0349.mp3">Track 349</li>
+<li URL="dtb_0350.mp3">Track 350</li>
+<li URL="dtb_0351.mp3">Track 351</li>
+<li URL="dtb_0352.mp3">Track 352</li>
+<li URL="dtb_0353.mp3">Track 353</li>
+<li URL="dtb_0354.mp3">Track 354</li>
+<li URL="dtb_0355.mp3">Track 355</li>
+<li URL="dtb_0356.mp3">Track 356</li>
+<li URL="dtb_0357.mp3">Track 357</li>
+<li URL="dtb_0358.mp3">Track 358</li>
+<li URL="dtb_0359.mp3">Track 359</li>
+<li URL="dtb_0360.mp3">Track 360</li>
+<li URL="dtb_0361.mp3">Track 361</li>
+<li URL="dtb_0362.mp3">Track 362</li>
+<li URL="dtb_0363.mp3">Track 363</li>
+<li URL="dtb_0364.mp3">Track 364</li>
+<li URL="dtb_0365.mp3">Track 365</li>
+<li URL="dtb_0366.mp3">Track 366</li>
+<li URL="dtb_0367.mp3">Track 367</li>
+<li URL="dtb_0368.mp3">Track 368</li>
+<li URL="dtb_0369.mp3">Track 369</li>
+<li URL="dtb_0370.mp3">Track 370</li>
+<li URL="dtb_0371.mp3">Track 371</li>
+<li URL="dtb_0372.mp3">Track 372</li>
+<li URL="dtb_0373.mp3">Track 373</li>
+<li URL="dtb_0374.mp3">Track 374</li>
+<li URL="dtb_0375.mp3">Track 375</li>
+<li URL="dtb_0376.mp3">Track 376</li>
+<li URL="dtb_0377.mp3">Track 377</li>
+<li URL="dtb_0378.mp3">Track 378</li>
+<li URL="dtb_0379.mp3">Track 379</li>
+<li URL="dtb_0380.mp3">Track 380</li>
+<li URL="dtb_0381.mp3">Track 381</li>
+<li URL="dtb_0382.mp3">Track 382</li>
+<li URL="dtb_0383.mp3">Track 383</li>
+<li URL="dtb_0384.mp3">Track 384</li>
+<li URL="dtb_0385.mp3">Track 385</li>
+<li URL="dtb_0386.mp3">Track 386</li>
+<li URL="dtb_0387.mp3">Track 387</li>
+<li URL="dtb_0388.mp3">Track 388</li>
+<li URL="dtb_0389.mp3">Track 389</li>
+<li URL="dtb_0390.mp3">Track 390</li>
+<li URL="dtb_0391.mp3">Track 391</li>
+<li URL="dtb_0392.mp3">Track 392</li>
+<li URL="dtb_0393.mp3">Track 393</li>
+<li URL="dtb_0394.mp3">Track 394</li>
+<li URL="dtb_0395.mp3">Track 395</li>
+<li URL="dtb_0396.mp3">Track 396</li>
+<li URL="dtb_0397.mp3">Track 397</li>
+<li URL="dtb_0398.mp3">Track 398</li>
+<li URL="dtb_0399.mp3">Track 399</li>
+<li URL="dtb_0400.mp3">Track 400</li>
+<li URL="dtb_0401.mp3">Track 401</li>
+<li URL="dtb_0402.mp3">Track 402</li>
+<li URL="dtb_0403.mp3">Track 403</li>
+<li URL="dtb_0404.mp3">Track 404</li>
+<li URL="dtb_0405.mp3">Track 405</li>
+<li URL="dtb_0406.mp3">Track 406</li>
+<li URL="dtb_0407.mp3">Track 407</li>
+<li URL="dtb_0408.mp3">Track 408</li>
+<li URL="dtb_0409.mp3">Track 409</li>
+<li URL="dtb_0410.mp3">Track 410</li>
+<li URL="dtb_0411.mp3">Track 411</li>
+<li URL="dtb_0412.mp3">Track 412</li>
+<li URL="dtb_0413.mp3">Track 413</li>
+<li URL="dtb_0414.mp3">Track 414</li>
+<li URL="dtb_0415.mp3">Track 415</li>
+<li URL="dtb_0416.mp3">Track 416</li>
+<li URL="dtb_0417.mp3">Track 417</li>
+<li URL="dtb_0418.mp3">Track 418</li>
+<li URL="dtb_0419.mp3">Track 419</li>
+<li URL="dtb_0420.mp3">Track 420</li>
+<li URL="dtb_0421.mp3">Track 421</li>
+<li URL="dtb_0422.mp3">Track 422</li>
+<li URL="dtb_0423.mp3">Track 423</li>
+<li URL="dtb_0424.mp3">Track 424</li>
+<li URL="dtb_0425.mp3">Track 425</li>
+<li URL="dtb_0426.mp3">Track 426</li>
+<li URL="dtb_0427.mp3">Track 427</li>
+<li URL="dtb_0428.mp3">Track 428</li>
+<li URL="dtb_0429.mp3">Track 429</li>
+<li URL="dtb_0430.mp3">Track 430</li>
+<li URL="dtb_0431.mp3">Track 431</li>
+<li URL="dtb_0432.mp3">Track 432</li>
+<li URL="dtb_0433.mp3">Track 433</li>
+<li URL="dtb_0434.mp3">Track 434</li>
+<li URL="dtb_0435.mp3">Track 435</li>
+<li URL="dtb_0436.mp3">Track 436</li>
+<li URL="dtb_0437.mp3">Track 437</li>
+<li URL="dtb_0438.mp3">Track 438</li>
+<li URL="dtb_0439.mp3">Track 439</li>
+<li URL="dtb_0440.mp3">Track 440</li>
+<li URL="dtb_0441.mp3">Track 441</li>
+<li URL="dtb_0442.mp3">Track 442</li>
+<li URL="dtb_0443.mp3">Track 443</li>
+<li URL="dtb_0444.mp3">Track 444</li>
+<li URL="dtb_0445.mp3">Track 445</li>
+<li URL="dtb_0446.mp3">Track 446</li>
+<li URL="dtb_0447.mp3">Track 447</li>
+<li URL="dtb_0448.mp3">Track 448</li>
+<li URL="dtb_0449.mp3">Track 449</li>
+<li URL="dtb_0450.mp3">Track 450</li>
+<li URL="dtb_0451.mp3">Track 451</li>
+<li URL="dtb_0452.mp3">Track 452</li>
+<li URL="dtb_0453.mp3">Track 453</li>
+<li URL="dtb_0454.mp3">Track 454</li>
+<li URL="dtb_0455.mp3">Track 455</li>
+<li URL="dtb_0456.mp3">Track 456</li>
+<li URL="dtb_0457.mp3">Track 457</li>
+<li URL="dtb_0458.mp3">Track 458</li>
+<li URL="dtb_0459.mp3">Track 459</li>
+<li URL="dtb_0460.mp3">Track 460</li>
+<li URL="dtb_0461.mp3">Track 461</li>
+<li URL="dtb_0462.mp3">Track 462</li>
+<li URL="dtb_0463.mp3">Track 463</li>
+<li URL="dtb_0464.mp3">Track 464</li>
+<li URL="dtb_0465.mp3">Track 465</li>
+<li URL="dtb_0466.mp3">Track 466</li>
+<li URL="dtb_0467.mp3">Track 467</li>
+<li URL="dtb_0468.mp3">Track 468</li>
+<li URL="dtb_0469.mp3">Track 469</li>
+<li URL="dtb_0470.mp3">Track 470</li>
+<li URL="dtb_0471.mp3">Track 471</li>
+<li URL="dtb_0472.mp3">Track 472</li>
+<li URL="dtb_0473.mp3">Track 473</li>
+<li URL="dtb_0474.mp3">Track 474</li>
+<li URL="dtb_0475.mp3">Track 475</li>
+<li URL="dtb_0476.mp3">Track 476</li>
+<li URL="dtb_0477.mp3">Track 477</li>
+<li URL="dtb_0478.mp3">Track 478</li>
+<li URL="dtb_0479.mp3">Track 479</li>
+<li URL="dtb_0480.mp3">Track 480</li>
+<li URL="dtb_0481.mp3">Track 481</li>
+<li URL="dtb_0482.mp3">Track 482</li>
+<li URL="dtb_0483.mp3">Track 483</li>
+<li URL="dtb_0484.mp3">Track 484</li>
+<li URL="dtb_0485.mp3">Track 485</li>
+<li URL="dtb_0486.mp3">Track 486</li>
+<li URL="dtb_0487.mp3">Track 487</li>
+<li URL="dtb_0488.mp3">Track 488</li>
+<li URL="dtb_0489.mp3">Track 489</li>
+<li URL="dtb_0490.mp3">Track 490</li>
+<li URL="dtb_0491.mp3">Track 491</li>
+<li URL="dtb_0492.mp3">Track 492</li>
+<li URL="dtb_0493.mp3">Track 493</li>
+<li URL="dtb_0494.mp3">Track 494</li>
+<li URL="dtb_0495.mp3">Track 495</li>
+<li URL="dtb_0496.mp3">Track 496</li>
+<li URL="dtb_0497.mp3">Track 497</li>
+<li URL="dtb_0498.mp3">Track 498</li>
+<li URL="dtb_0499.mp3">Track 499</li>
+<li URL="dtb_0500.mp3">Track 500</li>
+<li URL="dtb_0501.mp3">Track 501</li>
+<li URL="dtb_0502.mp3">Track 502</li>
+<li URL="dtb_0503.mp3">Track 503</li>
+<li URL="dtb_0504.mp3">Track 504</li>
+<li URL="dtb_0505.mp3">Track 505</li>
+<li URL="dtb_0506.mp3">Track 506</li>
+<li URL="dtb_0507.mp3">Track 507</li>
+<li URL="dtb_0508.mp3">Track 508</li>
+<li URL="dtb_0509.mp3">Track 509</li>
+<li URL="dtb_0510.mp3">Track 510</li>
+<li URL="dtb_0511.mp3">Track 511</li>
+<li URL="dtb_0512.mp3">Track 512</li>
+<li URL="dtb_0513.mp3">Track 513</li>
+<li URL="dtb_0514.mp3">Track 514</li>
+<li URL="dtb_0515.mp3">Track 515</li>
+<li URL="dtb_0516.mp3">Track 516</li>
+<li URL="dtb_0517.mp3">Track 517</li>
+<li URL="dtb_0518.mp3">Track 518</li>
+<li URL="dtb_0519.mp3">Track 519</li>
+<li URL="dtb_0520.mp3">Track 520</li>
+<li URL="dtb_0521.mp3">Track 521</li>
+<li URL="dtb_0522.mp3">Track 522</li>
+<li URL="dtb_0523.mp3">Track 523</li>
+<li URL="dtb_0524.mp3">Track 524</li>
+<li URL="dtb_0525.mp3">Track 525</li>
+<li URL="dtb_0526.mp3">Track 526</li>
+<li URL="dtb_0527.mp3">Track 527</li>
+<li URL="dtb_0528.mp3">Track 528</li>
+<li URL="dtb_0529.mp3">Track 529</li>
+<li URL="dtb_0530.mp3">Track 530</li>
+<li URL="dtb_0531.mp3">Track 531</li>
+<li URL="dtb_0532.mp3">Track 532</li>
+<li URL="dtb_0533.mp3">Track 533</li>
+<li URL="dtb_0534.mp3">Track 534</li>
+<li URL="dtb_0535.mp3">Track 535</li>
+<li URL="dtb_0536.mp3">Track 536</li>
+<li URL="dtb_0537.mp3">Track 537</li>
+<li URL="dtb_0538.mp3">Track 538</li>
+<li URL="dtb_0539.mp3">Track 539</li>
+<li URL="dtb_0540.mp3">Track 540</li>
+<li URL="dtb_0541.mp3">Track 541</li>
+<li URL="dtb_0542.mp3">Track 542</li>
+<li URL="dtb_0543.mp3">Track 543</li>
+<li URL="dtb_0544.mp3">Track 544</li>
+<li URL="dtb_0545.mp3">Track 545</li>
+<li URL="dtb_0546.mp3">Track 546</li>
+<li URL="dtb_0547.mp3">Track 547</li>
+<li URL="dtb_0548.mp3">Track 548</li>
+<li URL="dtb_0549.mp3">Track 549</li>
+<li URL="dtb_0550.mp3">Track 550</li>
+<li URL="dtb_0551.mp3">Track 551</li>
+<li URL="dtb_0552.mp3">Track 552</li>
+<li URL="dtb_0553.mp3">Track 553</li>
+<li URL="dtb_0554.mp3">Track 554</li>
+<li URL="dtb_0555.mp3">Track 555</li>
+<li URL="dtb_0556.mp3">Track 556</li>
+<li URL="dtb_0557.mp3">Track 557</li>
+<li URL="dtb_0558.mp3">Track 558</li>
+<li URL="dtb_0559.mp3">Track 559</li>
+<li URL="dtb_0560.mp3">Track 560</li>
+<li URL="dtb_0561.mp3">Track 561</li>
+<li URL="dtb_0562.mp3">Track 562</li>
+<li URL="dtb_0563.mp3">Track 563</li>
+<li URL="dtb_0564.mp3">Track 564</li>
+<li URL="dtb_0565.mp3">Track 565</li>
+<li URL="dtb_0566.mp3">Track 566</li>
+<li URL="dtb_0567.mp3">Track 567</li>
+<li URL="dtb_0568.mp3">Track 568</li>
+<li URL="dtb_0569.mp3">Track 569</li>
+<li URL="dtb_0570.mp3">Track 570</li>
+<li URL="dtb_0571.mp3">Track 571</li>
+<li URL="dtb_0572.mp3">Track 572</li>
+<li URL="dtb_0573.mp3">Track 573</li>
+<li URL="dtb_0574.mp3">Track 574</li>
+<li URL="dtb_0575.mp3">Track 575</li>
+<li URL="dtb_0576.mp3">Track 576</li>
+<li URL="dtb_0577.mp3">Track 577</li>
+<li URL="dtb_0578.mp3">Track 578</li>
+<li URL="dtb_0579.mp3">Track 579</li>
+<li URL="dtb_0580.mp3">Track 580</li>
+<li URL="dtb_0581.mp3">Track 581</li>
+<li URL="dtb_0582.mp3">Track 582</li>
+<li URL="dtb_0583.mp3">Track 583</li>
+<li URL="dtb_0584.mp3">Track 584</li>
+<li URL="dtb_0585.mp3">Track 585</li>
+<li URL="dtb_0586.mp3">Track 586</li>
+<li URL="dtb_0587.mp3">Track 587</li>
+<li URL="dtb_0588.mp3">Track 588</li>
+<li URL="dtb_0589.mp3">Track 589</li>
+<li URL="dtb_0590.mp3">Track 590</li>
+<li URL="dtb_0591.mp3">Track 591</li>
+<li URL="dtb_0592.mp3">Track 592</li>
+<li URL="dtb_0593.mp3">Track 593</li>
+<li URL="dtb_0594.mp3">Track 594</li>
+<li URL="dtb_0595.mp3">Track 595</li>
+<li URL="dtb_0596.mp3">Track 596</li>
+<li URL="dtb_0597.mp3">Track 597</li>
+<li URL="dtb_0598.mp3">Track 598</li>
+<li URL="dtb_0599.mp3">Track 599</li>
+<li URL="dtb_0600.mp3">Track 600</li>
+<li URL="dtb_0601.mp3">Track 601</li>
+<li URL="dtb_0602.mp3">Track 602</li>
+<li URL="dtb_0603.mp3">Track 603</li>
+<li URL="dtb_0604.mp3">Track 604</li>
+<li URL="dtb_0605.mp3">Track 605</li>
+<li URL="dtb_0606.mp3">Track 606</li>
+<li URL="dtb_0607.mp3">Track 607</li>
+<li URL="dtb_0608.mp3">Track 608</li>
+<li URL="dtb_0609.mp3">Track 609</li>
+<li URL="dtb_0610.mp3">Track 610</li>
+<li URL="dtb_0611.mp3">Track 611</li>
+<li URL="dtb_0612.mp3">Track 612</li>
+<li URL="dtb_0613.mp3">Track 613</li>
+<li URL="dtb_0614.mp3">Track 614</li>
+<li URL="dtb_0615.mp3">Track 615</li>
+<li URL="dtb_0616.mp3">Track 616</li>
+<li URL="dtb_0617.mp3">Track 617</li>
+<li URL="dtb_0618.mp3">Track 618</li>
+<li URL="dtb_0619.mp3">Track 619</li>
+<li URL="dtb_0620.mp3">Track 620</li>
+<li URL="dtb_0621.mp3">Track 621</li>
+<li URL="dtb_0622.mp3">Track 622</li>
+<li URL="dtb_0623.mp3">Track 623</li>
+<li URL="dtb_0624.mp3">Track 624</li>
+<li URL="dtb_0625.mp3">Track 625</li>
+<li URL="dtb_0626.mp3">Track 626</li>
+<li URL="dtb_0627.mp3">Track 627</li>
+<li URL="dtb_0628.mp3">Track 628</li>
+<li URL="dtb_0629.mp3">Track 629</li>
+<li URL="dtb_0630.mp3">Track 630</li></div>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.4/jquery.min.js'></script>
+<script>
+var Player = document.querySelector('#MyPlayer');
+var PlayLast = localStorage.getItem('ESC');
+var mediaIndex = 0;
+var playlistSize = 0;
+$(document).ready( function() {$('#pause').hide();
+playlistSize = $('#playlist li').length;
+if(PlayLast){
+Player.currentTime = PlayLast;}
+try{
+mediaIndex = parseInt(localStorage.getItem('MESC')) || 0;}catch(err){
+mediaIndex = 0;}
+var mediaToShow = $('#playlist li').eq(mediaIndex);
+Activate(mediaToShow);
+$(Player).bind('ended', function(){
+$('#next').click();
+});
+});
+function Activate(elem){
+var Movie = elem.attr('URL');
+$('#Title').text(elem.text());
+$(Player).attr('src', 'https://github.com/storytimeapp/Courses/blob/master/ENGLISH%20SPEAKING%20COURSE/'+Movie+'?raw=true');
+$('#playlist li').removeClass('active');
+elem.addClass('active');}
+$('#pbRate').change(function(){
+Player.playbackRate = $(this).val();
+});
+$('#play').click(function(){playMedia();});
+$('#pause').click(function(){Player.pause();
+$('#play').show();
+$('#pause').hide();
+$('#Toast').text('Track Paused!');
+SToast();});
+$('#next').click(function() {Player.pause();
+var next = $('#playlist li.active').next();
+if (next.length == 0){
+next = $('#playlist li:first-child');}
+Activate(next);
+setMediaIndex(1);
+playMedia();});
+$('#prev').click(function(){Player.pause();
+var prev = $('#playlist li.active').prev();
+if (prev.length == 0){
+prev = $('#playlist li:last-child');}
+Activate(prev);
+setMediaIndex(-1);
+playMedia();});
+$('#rewind').click(function(){Player.currentTime -= 10.0;
+Player.play();
+$('#play').hide();
+$('#pause').show();
+$('#Toast').text('Rewinded: 10-S');
+SToast();
+showCurrent();});
+$('#forward').click(function(){
+Player.currentTime += 10.0;
+Player.play();
+$('#play').hide();
+$('#pause').show();
+$('#Toast').text('Forwarded: 10-S');
+SToast();
+showCurrent();});
+$('#playlist li').click(function(){
+Player.pause();
+Activate($(this));
+mediaIndex = $(this).index();
+playMedia();});
+function playMedia(){
+localStorage.setItem('MESC', mediaIndex);
+Player.play();
+$('#play').hide();
+$('#pause').show();
+$('#Toast').text('Now Playing: ' + $('#Title').text());
+SToast();
+showCurrent();}
+function setMediaIndex(val){
+var temp = val < 0 ? mediaIndex - 1 : mediaIndex + 1;
+if(temp < 0) mediaIndex = playlistSize - 1;
+else if(temp >= playlistSize) mediaIndex = 0;
+else mediaIndex = temp;}
+function showCurrent(){
+$(Player).bind('timeupdate', function(){
+var s = parseInt(Player.currentTime % 60);
+var m = parseInt(Player.currentTime / 60) % 60;
+if (s < 10){
+s = '0' + s;}
+$('#current').html("<i>Current Duration</i>" + m + "<i>Minutes &</i>" + ":" + s + "<i>Seconds</i>");
+var value = 0;
+if (Player.currentTime > 0){value = Math.floor((100 / Player.duration) * Player.currentTime);}
+var minutes = parseInt(Player.duration / 60, 10);
+var seconds = parseInt(Player.duration % 60);
+$('#duration').html("<i>Total Duration</i>" + minutes + "<i>Minutes &</i>" + ":" + seconds + "<i>Seconds</i>");
+localStorage.setItem('ESC', Player.currentTime);
+$('#progress').css('width', value + '%');});}
+function SToast(){$('#Toast').show();
+setTimeout(function() { $('#Toast').hide(); }, 1500);}
+</script>
+</body>
+</html>
