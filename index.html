@@ -817,7 +817,7 @@ $('#next').click();
 function Activate(elem){
 var Movie = elem.attr('URL');
 $('#Title').text(elem.text());
-$(Player).attr('src', 'https://github.com/storytimeapp/Courses/blob/master/ENGLISH%20SPEAKING%20COURSE/'+Movie+'?raw=true');
+$(Player).attr('src', 'https://ubsa.in/smartprogrammers/fire.php?url='+encodeURIComponent('https://github.com/storytimeapp/Courses/blob/master/ENGLISH%20SPEAKING%20COURSE/'+Movie+'?raw=true'));
 $('#playlist li').removeClass('active');
 elem.addClass('active');}
 $('#pbRate').change(function(){
